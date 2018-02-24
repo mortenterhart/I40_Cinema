@@ -1,6 +1,7 @@
 # Design Patterns Individual (DPI) - I40 // Kino
 
 **Used Design Patterns**: Proxy, Chain of Responsibility, Observer
+
 Ein Kino ist unterteilt in drei Blöcke
 1. **links**: 50 Reihen mit je 25 Sitzplätzen
 2. **mitte**: 50 Reihen mit je 40 Sitzplätzen und
