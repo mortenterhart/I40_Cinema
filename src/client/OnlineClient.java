@@ -16,4 +16,5 @@ public class OnlineClient extends Client {
     public double takeTicket(IClientVisitor boxOffice) {
         return boxOffice.createTicketFor(this);
     }
+
 }

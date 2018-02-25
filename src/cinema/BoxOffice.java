@@ -20,12 +20,14 @@ public class BoxOffice {
     }
 
     public void guideToCounter(ClientGroup group) {
-        if (normalCounter.accepts(group)) {
-            normalCounter.offerSeats(group);
-        } else if (onlineCounter.accepts(group)) {
-            onlineCounter.offerSeats(group);
-        } else {
-            triggerIllegalStateException(group);
+        if (isOpen()) {
+            if (normalCounter.accepts(group)) {
+                normalCounter.offerSeats(group);
+            } else if (onlineCounter.accepts(group)) {
+                onlineCounter.offerSeats(group);
+            } else {
+                triggerIllegalStateException(group);
+            }
         }
     }
 
@@ -62,5 +64,9 @@ public class BoxOffice {
 
     public boolean isClosed() {
         return closed;
+    }
+
+    public boolean isOpen() {
+        return !closed;
     }
 }

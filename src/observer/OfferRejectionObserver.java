@@ -1,7 +1,7 @@
 package observer;
 
 import cinema.Cinema;
-import client.Client;
+import client.ClientGroup;
 import logging.Logger;
 
 public class OfferRejectionObserver implements ICinemaObserver {
@@ -20,9 +20,9 @@ public class OfferRejectionObserver implements ICinemaObserver {
         triggerUnsupportedOperationException("notifyCinemaIs95PercentFull");
     }
 
-    public void notifyOfferRejection(Client rejectingClient) {
+    public void notifyOfferRejection(ClientGroup rejectingGroup) {
         numberOfRejectedOffers++;
-        Logger.instance.log("Client " + rejectingClient.getName() + " rejected the offer");
+        Logger.instance.log("ClientGroup " + rejectingGroup + " rejected the offer");
 
         if (numberOfRejectedOffers > 3) {
             cinema.closeTicketOffice();

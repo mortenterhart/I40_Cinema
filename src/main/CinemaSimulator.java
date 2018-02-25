@@ -12,35 +12,41 @@ public class CinemaSimulator {
 
     public void startSimulation() {
         Cinema cinema = new Cinema();
+        ClientGroup.setLeftBlock(cinema.getLeftBlock());
+
+        // Online Ticket production
+
         BoxOffice ticketOffice = cinema.getTicketOffice();
         ticketOffice.open();
         Logger.instance.write("Box office opens");
-        for (int i = 0; i < 5; i++) {
-            ClientGroup randomGroup = generateRandomGroup();
-            IClientVisitor officeCounter = ticketOffice.getFittingCounterFor(randomGroup);
-            ticketOffice.guideToCounter(randomGroup);
+        while (ticketOffice.isOpen()) {
+            ClientGroup customerGroup = generateRandomGroup();
+            IClientVisitor officeCounter = ticketOffice.getFittingCounterFor(customerGroup);
+            ticketOffice.guideToCounter(customerGroup);
+            Logger.instance.log("Group Size: " + customerGroup.getSize());
+            Logger.instance.log("Group Preference: " + customerGroup.getPreference().getSection().getIdentifier() + ", " +
+                    customerGroup.getPreference().getBlock().getClass().getSimpleName());
 
-            boolean offerAccepted = true;
-            RealClient rejectingClient = null;
-            for (Client client : randomGroup.getMembers()) {
-                RealClient realClient = (RealClient) client;
-                if (!realClient.acceptsOffer()) {
-                    offerAccepted = false;
-                    rejectingClient = realClient;
-                }
-            }
-
-            if (offerAccepted) {
-                for (Client client : randomGroup.getMembers()) {
+            if (customerGroup.acceptsOffer()) {
+                Logger.instance.log("Offer accepted");
+                for (Client client : customerGroup.getMembers()) {
                     RealClient realClient = (RealClient) client;
                     realClient.takeTicket(officeCounter);
                 }
             } else {
-                cinema.reportClientRejection(rejectingClient);
-                rejectingClient.leaveCinema();
+                // Report observer
+                cinema.reportClientRejection(customerGroup);
+                customerGroup.leaveCinema();
             }
 
-            waitInterval(Configuration.instance.iterationInterval);
+            // Always check if the cinema is full
+            if (cinema.isFull()) {
+                cinema.reportCinemaFull();
+            } else if (cinema.is95PercentFull()) {
+                cinema.reportCinema95PercentFull();
+            }
+
+            //waitInterval(Configuration.instance.iterationInterval);
         }
         ticketOffice.close();
 
@@ -55,7 +61,7 @@ public class CinemaSimulator {
 
         ClientGroup group = new ClientGroup();
         for (int i = 0; i < groupSize; i++) {
-            group.addMember(new RealClient("", randomAgeNearConfinement()));
+            group.addMember(new RealClient("Monty Python", randomAgeNearConfinement()));
         }
 
         return group;

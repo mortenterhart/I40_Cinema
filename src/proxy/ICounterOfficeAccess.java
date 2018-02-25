@@ -1,7 +1,5 @@
 package proxy;
 
-import ticket.CinemaTicket;
-
 public interface ICounterOfficeAccess {
-    CinemaTicket bookTicket();
+    void bookTicket() throws IllegalAccessException;
 }

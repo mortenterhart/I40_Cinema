@@ -4,7 +4,7 @@ import block.Block;
 import block.LeftBlock;
 import block.MiddleBlock;
 import block.RightBlock;
-import client.Client;
+import client.ClientGroup;
 import observer.ICinemaObserver;
 import observer.OfferRejectionObserver;
 import observer.SeatAdmissionObserver;
@@ -32,12 +32,16 @@ public class Cinema {
         seatAdmissionObserver = new SeatAdmissionObserver(this);
     }
 
-    public void reportClientRejection(Client rejectingClient) {
-        offerRejectingObserver.notifyOfferRejection(rejectingClient);
+    public void reportClientRejection(ClientGroup rejectingGroup) {
+        offerRejectingObserver.notifyOfferRejection(rejectingGroup);
     }
 
     public void reportCinemaFull() {
+        seatAdmissionObserver.notifyCinemaIsFull();
+    }
 
+    public void reportCinema95PercentFull() {
+        seatAdmissionObserver.notifyCinemaIs95PercentFull();
     }
 
     public void closeTicketOffice() {
@@ -45,23 +49,36 @@ public class Cinema {
     }
 
     public boolean isFull() {
-        return isFull(leftBlock);
+        return isFull(leftBlock, 1);
     }
 
     // COR
-    private boolean isFull(Block responsibleBlock) {
+    private boolean isFull(Block responsibleBlock, int groupSize) {
         if (responsibleBlock == null) {
             return true;
         }
 
-        if (responsibleBlock.isFull()) {
-            return isFull(responsibleBlock.getSuccessor());
+        if (responsibleBlock.isFull(groupSize)) {
+            return isFull(responsibleBlock.getSuccessor(), groupSize);
         }
 
         return false;
     }
 
     public boolean is95PercentFull() {
+        return is95PercentFull(leftBlock);
+    }
+
+    // COR
+    private boolean is95PercentFull(Block responsibleBlock) {
+        if (responsibleBlock == null) {
+            return true;
+        }
+
+        if (responsibleBlock.is95PercentFull()) {
+            return is95PercentFull(responsibleBlock.getSuccessor());
+        }
+
         return false;
     }
 

@@ -49,10 +49,8 @@ public class OfficeCounter implements IClientVisitor {
     }
 
     public double createTicketFor(RealClient client) {
-        CinemaTicket normalTicket = createTicket(null, "Der Hobbit", 10);
-        if (client.acceptsOffer()) {
-            client.receiveTicket(normalTicket);
-        }
+        CinemaTicket normalTicket = createTicket(client.getOfferedSeatLocation(), "Life of Brian", 10);
+        client.receiveTicket(normalTicket);
         return 0;
     }
 

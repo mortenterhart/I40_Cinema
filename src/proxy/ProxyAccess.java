@@ -1,18 +1,20 @@
 package proxy;
 
+import cinema.OfficeCounter;
 import client.OnlineClient;
-import ticket.CinemaTicket;
 
 public class ProxyAccess implements ICounterOfficeAccess {
+    private OfficeCounter onlineCounter;
     private OnlineClient client;
     private RealAccess realAccess;
 
-    public ProxyAccess(OnlineClient client) {
+    public ProxyAccess(OfficeCounter onlineCounter, OnlineClient client) {
+        this.onlineCounter = onlineCounter;
         this.client = client;
     }
 
-    public CinemaTicket bookTicket() {
-        realAccess = new RealAccess(client);
-        return realAccess.bookTicket();
+    public void bookTicket() throws IllegalAccessException {
+        realAccess = new RealAccess(onlineCounter, client);
+        realAccess.bookTicket();
     }
 }

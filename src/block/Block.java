@@ -1,5 +1,6 @@
 package block;
 
+import main.Configuration;
 import seat.Seat;
 import seat.SeatLocation;
 import seat.SeatRow;
@@ -7,6 +8,7 @@ import seat.SeatSection;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Block {
     private Block successor;
@@ -53,6 +55,7 @@ public class Block {
      * or null, if there are no more seats available.
      */
     public List<SeatLocation> searchFreeSeatsFor(SeatSection section, int numberOfConsecutiveSeats) {
+        Objects.requireNonNull(section);
         checkSeatNumberArgument(numberOfConsecutiveSeats);
 
         List<SeatLocation> consecutiveFreeSeats = new ArrayList<>(numberOfConsecutiveSeats);
@@ -148,6 +151,26 @@ public class Block {
 
     public boolean isFull() {
         return isFull(1);
+    }
+
+    public boolean is95PercentFull() {
+        int numberOfReservedSeats = 1;
+        for (SeatSection section : sections) {
+            for (Seat blockSeat : section.getOrderedSeats()) {
+                if (blockSeat.isTaken()) {
+                    numberOfReservedSeats++;
+                }
+            }
+        }
+
+        int numberOfBlockRows = 0;
+        for (SeatSection section : sections) {
+            numberOfBlockRows += section.getSectionRows().size();
+        }
+        System.out.println("number of rows: " + numberOfBlockRows);
+        System.out.println("number registered: " + numberOfReservedSeats);
+
+        return (numberOfReservedSeats / (numberOfBlockRows * numberOfReservedSeats)) >= Configuration.instance.percentageOfFullCinema;
     }
 
     public void setSuccessor(Block successor) {

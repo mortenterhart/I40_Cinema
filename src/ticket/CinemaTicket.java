@@ -96,7 +96,7 @@ public class CinemaTicket {
         public CinemaTicket build() {
             CinemaTicket ticket = new CinemaTicket(this);
             ticketIdCounter++;
-            // seatLocation.reserve();
+            seatLocation.reserve();
             return ticket;
         }
     }

@@ -1,11 +1,11 @@
 package observer;
 
-import client.Client;
+import client.ClientGroup;
 
 public interface ICinemaObserver {
     void notifyCinemaIsFull();
 
     void notifyCinemaIs95PercentFull();
 
-    void notifyOfferRejection(Client rejectingClient);
+    void notifyOfferRejection(ClientGroup rejectingGroup);
 }

@@ -1,7 +1,7 @@
 package observer;
 
 import cinema.Cinema;
-import client.Client;
+import client.ClientGroup;
 
 public class SeatAdmissionObserver implements ICinemaObserver {
     private Cinema cinema;
@@ -11,14 +11,14 @@ public class SeatAdmissionObserver implements ICinemaObserver {
     }
 
     public void notifyCinemaIsFull() {
-
+        cinema.closeTicketOffice();
     }
 
     public void notifyCinemaIs95PercentFull() {
-
+        cinema.closeTicketOffice();
     }
 
-    public void notifyOfferRejection(Client rejectingClient) {
+    public void notifyOfferRejection(ClientGroup rejectingGroup) {
         throw new UnsupportedOperationException("unsupported operation (" + getClass().getName() + "): notifyOfferRejection");
     }
 }

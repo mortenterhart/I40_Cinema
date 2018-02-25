@@ -28,7 +28,7 @@ public class Client {
         this.ticket = ticket;
     }
 
-    public SeatLocation getOfferedSeat() {
+    public SeatLocation getOfferedSeatLocation() {
         return offeredSeat;
     }
 
