@@ -7,6 +7,7 @@ import block.RightBlock;
 import client.Client;
 import observer.ICinemaObserver;
 import observer.OfferRejectionObserver;
+import observer.SeatAdmissionObserver;
 
 public class Cinema {
     private Block leftBlock;
@@ -15,6 +16,7 @@ public class Cinema {
     private Projector projector;
 
     private final ICinemaObserver offerRejectingObserver;
+    private final ICinemaObserver seatAdmissionObserver;
 
     public Cinema() {
         Block rightBlock = new RightBlock();
@@ -27,10 +29,19 @@ public class Cinema {
         projector = new Projector();
 
         offerRejectingObserver = new OfferRejectionObserver(this);
+        seatAdmissionObserver = new SeatAdmissionObserver(this);
     }
 
     public void reportClientRejection(Client rejectingClient) {
         offerRejectingObserver.notifyOfferRejection(rejectingClient);
+    }
+
+    public void reportCinemaFull() {
+
+    }
+
+    public void closeTicketOffice() {
+        ticketOffice.close();
     }
 
     public boolean isFull() {

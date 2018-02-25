@@ -2,10 +2,12 @@ package cinema;
 
 import block.Block;
 import client.ClientGroup;
+import ticket.CinemaTicket;
 
 public class BoxOffice {
     private OfficeCounter normalCounter;
     private OfficeCounter onlineCounter;
+    private boolean closed = true;
 
     public BoxOffice(Block leftBlock, int cinemaId) {
         normalCounter = new OfficeCounter(leftBlock, clientGroup -> clientGroup.getSize() <= 2, cinemaId);
@@ -20,13 +22,11 @@ public class BoxOffice {
     public void guideToCounter(ClientGroup group) {
         if (normalCounter.accepts(group)) {
             normalCounter.offerSeats(group);
-            return;
         } else if (onlineCounter.accepts(group)) {
             onlineCounter.offerSeats(group);
-            return;
+        } else {
+            triggerIllegalStateException(group);
         }
-
-        triggerIllegalStateException(group);
     }
 
     public IClientVisitor getFittingCounterFor(ClientGroup group) {
@@ -40,6 +40,14 @@ public class BoxOffice {
         return null;
     }
 
+    public void open() {
+        closed = false;
+    }
+
+    public void close() {
+        closed = true;
+    }
+
     private void triggerIllegalStateException(ClientGroup group) {
         throw new IllegalStateException("client group not recognized: " + group);
     }
@@ -50,5 +58,9 @@ public class BoxOffice {
 
     public OfficeCounter getOnlineCounter() {
         return onlineCounter;
+    }
+
+    public boolean isClosed() {
+        return closed;
     }
 }

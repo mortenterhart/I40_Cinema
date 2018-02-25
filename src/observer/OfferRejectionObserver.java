@@ -25,7 +25,7 @@ public class OfferRejectionObserver implements ICinemaObserver {
         Logger.instance.log("Client " + rejectingClient.getName() + " rejected the offer");
 
         if (numberOfRejectedOffers > 3) {
-            cinema.
+            cinema.closeTicketOffice();
         }
     }
 

@@ -1,6 +1,6 @@
 package client;
 
-import cinema.CinemaTicket;
+import ticket.CinemaTicket;
 import seat.SeatLocation;
 
 public class Client {

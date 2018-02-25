@@ -6,6 +6,7 @@ import client.ClientGroup;
 import client.OnlineClient;
 import client.RealClient;
 import seat.SeatLocation;
+import ticket.CinemaTicket;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -34,15 +35,15 @@ public class OfficeCounter implements IClientVisitor {
     public void offerSeats(ClientGroup group) {
         if (terminal.isPreferredSectionFree(group)) {
             terminal.markOfferedSeats(group);
-            return;
-        }
 
-        List<SeatLocation> nextSeatProposals = terminal.chooseNextFreeSection(group.getSize());
-        if (nextSeatProposals != null) {
-            int listIndex = 0;
-            for (Client client : group.getMembers()) {
-                client.offerSeat(nextSeatProposals.get(listIndex));
-                listIndex++;
+        } else {
+            List<SeatLocation> nextSeatProposals = terminal.chooseNextFreeSection(group.getSize());
+            if (nextSeatProposals != null) {
+                int listIndex = 0;
+                for (Client client : group.getMembers()) {
+                    client.offerSeat(nextSeatProposals.get(listIndex));
+                    listIndex++;
+                }
             }
         }
     }

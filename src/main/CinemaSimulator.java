@@ -13,6 +13,7 @@ public class CinemaSimulator {
     public void startSimulation() {
         Cinema cinema = new Cinema();
         BoxOffice ticketOffice = cinema.getTicketOffice();
+        ticketOffice.open();
         Logger.instance.write("Box office opens");
         for (int i = 0; i < 5; i++) {
             ClientGroup randomGroup = generateRandomGroup();
@@ -41,6 +42,7 @@ public class CinemaSimulator {
 
             waitInterval(Configuration.instance.iterationInterval);
         }
+        ticketOffice.close();
 
         Logger.instance.write("Box office has closed, movie starts in 10 minutes");
 

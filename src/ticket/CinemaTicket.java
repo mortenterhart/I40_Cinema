@@ -1,4 +1,4 @@
-package cinema;
+package ticket;
 
 import seat.SeatLocation;
 
@@ -8,6 +8,50 @@ public class CinemaTicket {
     private double price = 10.0;
     private String movieName;
     private int cinemaId = 42;
+
+    protected CinemaTicket() {
+
+    }
+
+    protected void setTicketId(int ticketId) {
+        this.ticketId = ticketId;
+    }
+
+    protected void setSeatLocation(SeatLocation seatLocation) {
+        this.seatLocation = seatLocation;
+    }
+
+    protected void setPrice(double price) {
+        this.price = price;
+    }
+
+    protected void setMovieName(String movieName) {
+        this.movieName = movieName;
+    }
+
+    protected void setCinemaId(int cinemaId) {
+        this.cinemaId = cinemaId;
+    }
+
+    public int getTicketId() {
+        return ticketId;
+    }
+
+    public SeatLocation getSeatLocation() {
+        return seatLocation;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getMovieName() {
+        return movieName;
+    }
+
+    public int getCinemaId() {
+        return cinemaId;
+    }
 
     private CinemaTicket(Builder builder) {
         ticketId = Builder.ticketIdCounter;
