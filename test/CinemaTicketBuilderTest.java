@@ -19,6 +19,7 @@ public class CinemaTicketBuilderTest {
     SeatRow row;
     Seat seat;
 
+
     @Before
     public void buildBuilder() {
 
@@ -29,8 +30,7 @@ public class CinemaTicketBuilderTest {
         this.row = new SeatRow(1, 20);
         this.seat = new Seat();
         this.seatLocation = new SeatLocation(cinemaBlock, section, row, seat);
-
-        //this.ticket = new CinemaTicket(this.builder); TODO Change!
+        builder.setPrice(42);
 
     }
 
@@ -58,6 +58,15 @@ public class CinemaTicketBuilderTest {
     @Test
     public void testBuild(){
         assertNotNull(builder.build());
+
+    }
+
+    @Test
+    public void testToString(){
+        CinemaTicket ticket = builder.build();
+        assertNotNull(ticket);
+        System.out.println(ticket.toString());
+        //throws Exception in line 65         builder.append("seatLocation = \"").append(seatLocation.getLocator()).append("\", ");
     }
 
 }
