@@ -1,23 +1,26 @@
 package main;
 
-import cinema.Cinema;
+import logging.Logger;
 
 public class Application {
 
     private void init() {
-        // Logger.instance.init();
+        Logger.instance.init();
     }
 
     private void execute() {
-        Cinema cinema = new Cinema();
+        CinemaSimulator simulator = new CinemaSimulator();
+        simulator.startSimulation();
     }
 
     private void prepareShutdown() {
-        // Logger.instance.close();
+        Logger.instance.close();
     }
 
     public static void main(String[] args) {
         Application application = new Application();
         application.init();
+        application.execute();
+        application.prepareShutdown();
     }
 }

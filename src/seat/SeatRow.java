@@ -28,7 +28,7 @@ public class SeatRow {
 
     private void buildSeats(int numberOfSeats) {
         for (int seatId = 1; seatId <= numberOfSeats; seatId++) {
-            seats.add(new Seat(seatId));
+            seats.add(new Seat());
         }
     }
 

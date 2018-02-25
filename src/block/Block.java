@@ -1,7 +1,9 @@
 package block;
 
+import seat.Seat;
+import seat.SeatLocation;
+import seat.SeatRow;
 import seat.SeatSection;
-import client.ClientGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,26 +11,72 @@ import java.util.List;
 public class Block {
     private Block successor;
     private int numberOfSeatsPerRow = 0;
-    private List<SeatSection> rows;
+    private BlockLocation location;
+    private List<SeatSection> sections;
 
     public Block(int numberOfSeatsPerRow) {
         this(null, numberOfSeatsPerRow);
     }
 
     public Block(Block successor, int numberOfSeatsPerRow) {
-        rows = new ArrayList<>(5);
+        sections = new ArrayList<>(5);
         setSuccessor(successor);
         this.numberOfSeatsPerRow = numberOfSeatsPerRow;
+
+        instantiateSeatSections(numberOfSeatsPerRow);
+    }
+
+    private void instantiateSeatSections(int numberOfSeatsPerRow) {
+        sections.add(new SeatSection("A", 1, 5, numberOfSeatsPerRow));
+        sections.add(new SeatSection("B", 6, 15, numberOfSeatsPerRow));
+        sections.add(new SeatSection("C", 16, 25, numberOfSeatsPerRow));
+        sections.add(new SeatSection("D", 26, 45, numberOfSeatsPerRow));
+        sections.add(new SeatSection("E", 46, 50, numberOfSeatsPerRow));
     }
 
     /**
      * Checks if the section preferred by a group of customers is free.
      *
-     * @param group the group
      * @return true if the section is still free, false otherwise.
      */
-    public boolean isPreferredSectionFree(ClientGroup group) {
-        return false;
+    public boolean hasSectionWithFreeSeats(SeatSection preferredSection, int numberOfSeats) {
+        return searchFreeSeatsFor(preferredSection, numberOfSeats) != null;
+    }
+
+    /**
+     * Searches inside the specified section after a number of consecutive seats that are
+     * not booked yet.
+     *
+     * @param section                  the section to search in
+     * @param numberOfConsecutiveSeats the number of consecutive seats
+     * @return a list of {@link SeatLocation} elements describing the free seats
+     * or null, if there are no more seats available.
+     */
+    public List<SeatLocation> searchFreeSeatsFor(SeatSection section, int numberOfConsecutiveSeats) {
+        checkSeatNumberArgument(numberOfConsecutiveSeats);
+
+        List<SeatLocation> consecutiveFreeSeats = new ArrayList<>(numberOfConsecutiveSeats);
+        for (SeatRow sectionRow : section.getSectionRows()) {
+            for (Seat rowSeat : sectionRow.getSeats()) {
+                if (!rowSeat.isTaken()) {
+                    consecutiveFreeSeats.add(new SeatLocation(this, section, sectionRow, rowSeat));
+                } else {
+                    consecutiveFreeSeats.clear();
+                }
+
+                if (consecutiveFreeSeats.size() == numberOfConsecutiveSeats) {
+                    return consecutiveFreeSeats;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    private void checkSeatNumberArgument(int numberOfSeats) {
+        if (numberOfSeats <= 0) {
+            throw new IllegalArgumentException("number of seats is smaller or equal to 0");
+        }
     }
 
     /**
@@ -38,8 +86,46 @@ public class Block {
      * @param groupSize the number of consecutive free seats
      * @return the seat section
      */
-    protected SeatSection chooseNextSection(int groupSize) {
-        return null;
+    public List<SeatLocation> chooseNextFreeSection(int groupSize) {
+        // First COR (Block)
+        if (this.isFull(groupSize)) {
+            if (successor != null) {
+                return this.getSuccessor().chooseNextFreeSection(groupSize);
+            }
+
+            return null;
+        }
+
+        // Nested COR (Section)
+
+        // Start searching for next free seats at the back of the cinema
+        // because people rather want to sit in the behind than directly
+        // in front of the screen
+        SeatSection upperSection = sections.get(sections.size() - 1);
+        return locateFreeSeatsIn(upperSection, groupSize);
+    }
+
+    private List<SeatLocation> locateFreeSeatsIn(SeatSection checkSection, int groupSize) {
+        if (this.hasSectionWithFreeSeats(checkSection, groupSize)) {
+            return searchFreeSeatsFor(checkSection, groupSize);
+        }
+
+        if (this.getSectionSuccessor(checkSection) == null) {
+            return null;
+        }
+
+        return locateFreeSeatsIn(getSectionSuccessor(checkSection), groupSize);
+    }
+
+    private SeatSection getSectionSuccessor(SeatSection precursor) {
+        if (sections.indexOf(precursor) == 0) {
+            return null;
+        }
+
+        // Reverse delegating of sections because people rather
+        // want to sit in higher sections (sections are counted
+        // from the front of the cinema room to the back)
+        return sections.get(sections.indexOf(precursor) - 1);
     }
 
     /**
@@ -51,8 +137,17 @@ public class Block {
      * @param groupSize the number of consecutive seats
      * @return true if those seats are still free, false otherwise.
      */
-    protected boolean isBlockFull(int groupSize) {
-        return false;
+    public boolean isFull(int groupSize) {
+        for (SeatSection checkSection : sections) {
+            if (hasSectionWithFreeSeats(checkSection, groupSize)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isFull() {
+        return isFull(1);
     }
 
     public void setSuccessor(Block successor) {
@@ -61,5 +156,17 @@ public class Block {
 
     public Block getSuccessor() {
         return successor;
+    }
+
+    public void setLocation(BlockLocation location) {
+        this.location = location;
+    }
+
+    public BlockLocation getLocation() {
+        return location;
+    }
+
+    public List<SeatSection> getSections() {
+        return sections;
     }
 }

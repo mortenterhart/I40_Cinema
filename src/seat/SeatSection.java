@@ -13,6 +13,15 @@ public class SeatSection {
         buildRows(lowerRowId, upperRowId, numberOfSeatsPerRow);
     }
 
+    public List<Seat> getOrderedSeats() {
+        List<Seat> allSeats = new ArrayList<>();
+
+        for (SeatRow row : sectionRows) {
+            allSeats.addAll(row.getSeats());
+        }
+        return allSeats;
+    }
+
     public List<SeatRow> getSectionRows() {
         return sectionRows;
     }
