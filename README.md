@@ -36,6 +36,6 @@ existieren drei Typen
 
 Die Abendkasse schließt 10 Minuten vor dem Beginn der Vorstellung. Zu Simulationszwecken wird alle 200 ms
 zufällig eine Einzelperson, Gruppe mit 2 Personen, Gruppe mit 3 Personen oder Gruppe mit 4 Personen generiert.
-Die Simulation endet wenn
+Die Simulation endet, wenn
 1. alle Plätze belegt sind oder
 2. die Plätze zu 95% belegt sind und zum dritten Mal ein Kunde das Angebot abgelehnt hat.
