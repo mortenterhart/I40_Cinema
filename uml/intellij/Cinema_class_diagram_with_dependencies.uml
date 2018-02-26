@@ -1,0 +1,1286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="614.6925934332621" y="3279.5">block.LeftBlock</node>
+    <node x="1571.1145833333333" y="6591.0">main.Application</node>
+    <node x="2363.4588876286525" y="1015.0">random.MersenneTwisterFast</node>
+    <node x="4785.203010099929" y="4184.5">ticket.SurpriseTicket</node>
+    <node x="5431.732316915721" y="2084.5">ticket.CinemaTicket</node>
+    <node x="4454.5284478681015" y="4513.0">cinema.OfficeCounter</node>
+    <node x="1498.606109850874" y="2519.0">block.Block</node>
+    <node x="3276.8627136752134" y="6101.0">main.RealAccessHandler</node>
+    <node x="1798.7863434332617" y="0.0">seat.Seat</node>
+    <node x="4288.779988484349" y="688.0">seat.SeatLocation</node>
+    <node x="1547.6925934332621" y="5084.0">cinema.Projector</node>
+    <node x="2221.192593433262" y="4163.0">observer.ICinemaObserver</node>
+    <node x="4859.498611111111" y="3279.5">client.RealClient</node>
+    <node x="2382.9588876286525" y="1997.0">main.Configuration</node>
+    <node x="5625.108887628652" y="3291.0">ticket.OnlineTicketType</node>
+    <node x="3240.3162236070752" y="3279.0">client.ClientSeatPreference</node>
+    <node x="4140.798611111111" y="6024.0">main.OnlineAccessHandler</node>
+    <node x="5860.376976495727" y="5528.5">proxy.ProxyAccess</node>
+    <node x="3608.3162236070752" y="3313.0">utility.EnumUtility</node>
+    <node x="2507.358887628652" y="4973.0">cinema.BoxOffice</node>
+    <node x="1498.1894431842072" y="467.0">seat.SeatSection</node>
+    <node x="4002.2030100999286" y="4140.0">cinema.BoxOfficeTerminal</node>
+    <node x="1696.78125" y="5396.0">cinema.Cinema</node>
+    <node x="4935.703010099929" y="2607.5">client.Client</node>
+    <node x="2995.3162236070752" y="2608.0">logging.Logger</node>
+    <node x="1636.6925934332621" y="4579.5">observer.SeatAdmissionObserver</node>
+    <node x="1340.6925934332621" y="5084.0">cinema.Screen</node>
+    <node x="6063.488724385643" y="4162.5">client.OnlineClient</node>
+    <node x="777.348669374684" y="2140.5">block.BlockLocation</node>
+    <node x="1751.7863434332617" y="246.0">seat.SeatRow</node>
+    <node x="4923.148611111111" y="4657.5">proxy.ICounterOfficeAccess</node>
+    <node x="5497.085309829059" y="3691.0">ticket.OnlineTicket</node>
+    <node x="0.0" y="3279.5">block.MiddleBlock</node>
+    <node x="1962.6925934332621" y="4557.0">observer.OfferRejectionObserver</node>
+    <node x="1019.6925934332621" y="3279.5">block.RightBlock</node>
+    <node x="5460.138566915721" y="1323.5">ticket.CinemaTicket.Builder</node>
+    <node x="1617.1145833333333" y="6445.0">main.CinemaSimulator</node>
+    <node x="836.215909090909" y="5584.5">main.IAccessHandler</node>
+    <node x="5848.210309829059" y="5038.5">proxy.RealAccess</node>
+    <node x="4921.898611111111" y="3702.5">cinema.IClientVisitor</node>
+    <node x="5516.380093433262" y="766.0">ticket.IBuilder</node>
+    <node x="5004.078010099929" y="4184.5">ticket.HotDealTicket</node>
+    <node x="3209.541551766595" y="3558.0">client.ClientGroup</node>
+    <node x="5193.078010099928" y="4184.5">ticket.StandardTicket</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="block.MiddleBlock" target="block.BlockLocation">
+      <point x="-32.083333333333485" y="-59.0" />
+      <point x="160.41666666666697" y="2449.0" />
+      <point x="788.598669374684" y="2449.0" />
+      <point x="-56.25" y="47.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="logging.Logger">
+      <point x="-59.02777777777783" y="-180.5" />
+      <point x="4294.270833333333" y="5864.0" />
+      <point x="3980.7030100999286" y="5864.0" />
+      <point x="3980.7030100999286" y="3119.0" />
+      <point x="3135.0974736070752" y="3119.0" />
+      <point x="33.28125" y="136.0" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="cinema.Cinema">
+      <point x="-177.08333333333303" y="-180.5" />
+      <point x="4176.215277777778" y="5914.0" />
+      <point x="1930.03125" y="5914.0" />
+      <point x="77.75" y="214.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="ticket.SurpriseTicket">
+      <point x="78.85714285714266" y="-170.0" />
+      <point x="4740.385590725245" y="4433.0" />
+      <point x="4870.203010099929" y="4433.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="client.Client">
+      <point x="177.08333333333348" y="-180.5" />
+      <point x="4530.381944444444" y="5994.0" />
+      <point x="6515.072057718977" y="5994.0" />
+      <point x="6515.072057718977" y="2989.0" />
+      <point x="5194.453010099929" y="2989.0" />
+      <point x="123.75" y="136.5" />
+    </edge>
+    <edge source="block.LeftBlock" target="main.Configuration">
+      <point x="32.083333333333485" y="-59.0" />
+      <point x="839.2759267665956" y="3099.0" />
+      <point x="1029.0259267665956" y="3099.0" />
+      <point x="1029.0259267665956" y="2479.0" />
+      <point x="2434.2922209619855" y="2479.0" />
+      <point x="-102.66666666666674" y="191.0" />
+    </edge>
+    <edge source="cinema.BoxOfficeTerminal" target="client.ClientGroup">
+      <point x="-150.83333333333348" y="-81.5" />
+      <point x="4032.369676766595" y="3970.0" />
+      <point x="3516.4646286896723" y="3970.0" />
+      <point x="116.92307692307668" y="181.0" />
+    </edge>
+    <edge source="logging.Logger" target="main.Configuration">
+      <point x="0.0" y="-136.0" />
+      <point x="3101.8162236070752" y="2489.0" />
+      <point x="2571.1811098508742" y="2489.0" />
+      <point x="34.22222222222217" y="191.0" />
+    </edge>
+    <edge source="main.CinemaSimulator" target="cinema.Cinema">
+      <point x="36.0" y="-48.0" />
+      <point x="1779.1145833333333" y="6425.0" />
+      <point x="1754.1145833333333" y="6425.0" />
+      <point x="1754.1145833333333" y="6004.0" />
+      <point x="1774.53125" y="6004.0" />
+      <point x="-77.75" y="214.0" />
+    </edge>
+    <edge source="main.CinemaSimulator" target="logging.Logger">
+      <point x="-108.0" y="-48.0" />
+      <point x="1635.1145833333333" y="6425.0" />
+      <point x="406.5" y="6425.0" />
+      <point x="406.5" y="3488.0" />
+      <point x="1971.9241071428569" y="3488.0" />
+      <point x="1971.9241071428569" y="3209.0" />
+      <point x="3015.2849736070752" y="3209.0" />
+      <point x="-86.53125" y="136.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="ticket.CinemaTicket">
+      <point x="138.0" y="-170.0" />
+      <point x="4799.5284478681015" y="4463.0" />
+      <point x="5395.203010099928" y="4463.0" />
+      <point x="5395.203010099928" y="4100.0" />
+      <point x="5925.316223607075" y="4100.0" />
+      <point x="5925.316223607075" y="2499.0" />
+      <point x="5619.857316915721" y="2499.0" />
+      <point x="80.62500000000023" y="103.5" />
+    </edge>
+    <edge source="client.ClientGroup" target="client.ClientSeatPreference">
+      <point x="15.833333333333485" y="-181.0" />
+      <point x="3415.374885099929" y="3538.0" />
+      <point x="3402.8162236070752" y="3538.0" />
+      <point x="0.0" y="59.5" />
+    </edge>
+    <edge source="block.RightBlock" target="seat.SeatLocation">
+      <point x="-32.083333333333485" y="-59.0" />
+      <point x="1180.1092600999286" y="3039.0" />
+      <point x="922.848669374684" y="3039.0" />
+      <point x="922.848669374684" y="935.0" />
+      <point x="4343.632929660819" y="935.0" />
+      <point x="-131.64705882352928" y="103.5" />
+    </edge>
+    <edge source="observer.SeatAdmissionObserver" target="logging.Logger">
+      <point x="-102.0" y="-103.5" />
+      <point x="1687.6925934332621" y="4493.0" />
+      <point x="1733.1925934332621" y="4493.0" />
+      <point x="1733.1925934332621" y="3528.0" />
+      <point x="2152.924107142857" y="3528.0" />
+      <point x="2152.924107142857" y="3249.0" />
+      <point x="3068.5349736070752" y="3249.0" />
+      <point x="-33.28125" y="136.0" />
+    </edge>
+    <edge source="block.MiddleBlock" target="main.Configuration">
+      <point x="32.083333333333485" y="-59.0" />
+      <point x="224.58333333333348" y="3099.0" />
+      <point x="529.0259267665956" y="3099.0" />
+      <point x="529.0259267665956" y="2469.0" />
+      <point x="2400.0699987397634" y="2469.0" />
+      <point x="-136.8888888888889" y="191.0" />
+    </edge>
+    <edge source="proxy.ProxyAccess" target="client.OnlineClient">
+      <point x="49.33333333333303" y="-81.5" />
+      <point x="6131.710309829059" y="5346.0" />
+      <point x="6216.366932300336" y="5346.0" />
+      <point x="6216.366932300336" y="4493.0" />
+      <point x="6214.738724385643" y="4493.0" />
+      <point x="-30.25" y="59.0" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="cinema.Cinema">
+      <point x="-128.46428571428578" y="-103.5" />
+      <point x="3311.8984279609276" y="5984.0" />
+      <point x="1826.3645833333333" y="5984.0" />
+      <point x="-25.916666666666742" y="214.0" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="client.Client">
+      <point x="35.03571428571422" y="-103.5" />
+      <point x="3475.3984279609276" y="6004.0" />
+      <point x="3485.8146085823873" y="6004.0" />
+      <point x="3485.8146085823873" y="4463.0" />
+      <point x="3904.8162236070752" y="4463.0" />
+      <point x="3904.8162236070752" y="3239.0" />
+      <point x="4991.953010099929" y="3239.0" />
+      <point x="-78.75" y="136.5" />
+    </edge>
+    <edge source="cinema.BoxOfficeTerminal" target="client.Client">
+      <point x="150.83333333333348" y="-81.5" />
+      <point x="4334.036343433262" y="3980.0" />
+      <point x="4311.025554295319" y="3980.0" />
+      <point x="4311.025554295319" y="3249.0" />
+      <point x="5014.453010099929" y="3249.0" />
+      <point x="-56.25" y="136.5" />
+    </edge>
+    <edge source="ticket.OnlineTicket" target="ticket.OnlineTicketType">
+      <point x="116.625" y="-48.0" />
+      <point x="5769.210309829059" y="3528.0" />
+      <point x="5678.416579936344" y="3528.0" />
+      <point x="-23.692307692307622" y="47.5" />
+    </edge>
+    <edge source="block.LeftBlock" target="block.BlockLocation">
+      <point x="-32.083333333333485" y="-59.0" />
+      <point x="775.1092600999286" y="3069.0" />
+      <point x="489.84866937468405" y="3069.0" />
+      <point x="489.84866937468405" y="2459.0" />
+      <point x="811.098669374684" y="2459.0" />
+      <point x="-33.75" y="47.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="cinema.BoxOfficeTerminal">
+      <point x="-11.805555555555657" y="-180.5" />
+      <point x="4341.493055555556" y="5844.0" />
+      <point x="4220.548611111111" y="5844.0" />
+      <point x="4220.548611111111" y="4483.0" />
+      <point x="4047.4530100999286" y="4483.0" />
+      <point x="-135.75" y="81.5" />
+    </edge>
+    <edge source="block.Block" target="seat.SeatLocation">
+      <point x="156.75" y="-225.0" />
+      <point x="1864.356109850874" y="2449.0" />
+      <point x="1820.842220961985" y="2449.0" />
+      <point x="1820.842220961985" y="975.0" />
+      <point x="4431.397635543172" y="975.0" />
+      <point x="-43.88235294117658" y="103.5" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="seat.SeatLocation">
+      <point x="-19.71428571428578" y="-170.0" />
+      <point x="4641.814162153816" y="4353.0" />
+      <point x="4429.703010099928" y="4353.0" />
+      <point x="4429.703010099928" y="995.0" />
+      <point x="4475.279988484349" y="995.0" />
+      <point x="0.0" y="103.5" />
+    </edge>
+    <edge source="cinema.BoxOffice" target="cinema.OfficeCounter">
+      <point x="142.0999999999999" y="-136.5" />
+      <point x="2852.458887628652" y="4933.0" />
+      <point x="4523.5284478681015" y="4933.0" />
+      <point x="-138.0" y="170.0" />
+    </edge>
+    <edge source="ticket.CinemaTicket.Builder" target="ticket.CinemaTicket">
+      <point x="-14.4375" y="147.5" />
+      <point x="5561.201066915721" y="1977.0" />
+      <point x="5557.148983582389" y="1977.0" />
+      <point x="17.916666666667197" y="-103.5" />
+    </edge>
+    <edge source="client.OnlineClient" target="logging.Logger">
+      <point x="30.25" y="-59.0" />
+      <point x="6275.238724385643" y="4120.0" />
+      <point x="6301.616932300336" y="4120.0" />
+      <point x="6301.616932300336" y="3019.0" />
+      <point x="3201.6599736070752" y="3019.0" />
+      <point x="99.84375" y="136.0" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="proxy.ProxyAccess">
+      <point x="59.02777777777783" y="-180.5" />
+      <point x="4412.326388888889" y="5944.0" />
+      <point x="6082.376976495727" y="5944.0" />
+      <point x="0.0" y="81.5" />
+    </edge>
+    <edge source="cinema.Projector" target="logging.Logger">
+      <point x="0.0" y="-25.5" />
+      <point x="1626.1925934332621" y="3518.0" />
+      <point x="2141.924107142857" y="3518.0" />
+      <point x="2141.924107142857" y="3239.0" />
+      <point x="3055.2224736070752" y="3239.0" />
+      <point x="-46.59375" y="136.0" />
+    </edge>
+    <edge source="client.Client" target="seat.SeatLocation">
+      <point x="-101.25" y="-136.5" />
+      <point x="4969.453010099929" y="2499.0" />
+      <point x="4997.703010099929" y="2499.0" />
+      <point x="4997.703010099929" y="995.0" />
+      <point x="4497.221164954937" y="995.0" />
+      <point x="21.94117647058829" y="103.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="cinema.OfficeCounter">
+      <point x="11.805555555555657" y="-180.5" />
+      <point x="4365.104166666667" y="5924.0" />
+      <point x="4661.5284478681015" y="5924.0" />
+      <point x="0.0" y="170.0" />
+    </edge>
+    <edge source="ticket.StandardTicket" target="ticket.OnlineTicketType">
+      <point x="43.75" y="-37.0" />
+      <point x="5324.328010099928" y="4090.0" />
+      <point x="5837.816223607075" y="4090.0" />
+      <point x="5837.816223607075" y="3508.0" />
+      <point x="5702.108887628652" y="3508.0" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="ticket.CinemaTicket.Builder" target="seat.SeatLocation">
+      <point x="0.0" y="-147.5" />
+      <point x="5575.638566915721" y="935.0" />
+      <point x="4628.868223778467" y="935.0" />
+      <point x="153.58823529411802" y="103.5" />
+    </edge>
+    <edge source="main.CinemaSimulator" target="main.IAccessHandler">
+      <point x="-36.0" y="-48.0" />
+      <point x="1707.1145833333333" y="6405.0" />
+      <point x="868.382575757576" y="6405.0" />
+      <point x="-64.33333333333348" y="25.5" />
+    </edge>
+    <edge source="cinema.Cinema" target="observer.SeatAdmissionObserver">
+      <point x="21.204545454545496" y="-214.0" />
+      <point x="1873.4857954545455" y="5286.0" />
+      <point x="1904.6251740585778" y="5286.0" />
+      <point x="1904.6251740585778" y="4953.0" />
+      <point x="1891.6925934332621" y="4953.0" />
+      <point x="102.0" y="103.5" />
+    </edge>
+    <edge source="ticket.CinemaTicket.Builder" target="ticket.IBuilder">
+      <point x="77.0" y="-147.5" />
+      <point x="5652.638566915721" y="925.0" />
+      <point x="5576.380093433262" y="925.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="cinema.BoxOffice">
+      <point x="-81.75" y="-103.5" />
+      <point x="3358.6127136752134" y="5964.0" />
+      <point x="2887.733887628652" y="5964.0" />
+      <point x="2887.733887628652" y="5376.0" />
+      <point x="2862.608887628652" y="5376.0" />
+      <point x="152.25" y="136.5" />
+    </edge>
+    <edge source="seat.SeatLocation" target="seat.SeatRow">
+      <point x="-31.08333333333303" y="-103.5" />
+      <point x="4444.196655151016" y="668.0" />
+      <point x="4487.489319172592" y="668.0" />
+      <point x="4487.489319172592" y="447.0" />
+      <point x="1972.2863434332617" y="447.0" />
+      <point x="73.5" y="70.5" />
+    </edge>
+    <edge source="block.RightBlock" target="seat.SeatSection">
+      <point x="-160.41666666666652" y="-59.0" />
+      <point x="1051.7759267665956" y="3059.0" />
+      <point x="766.848669374684" y="3059.0" />
+      <point x="766.848669374684" y="668.0" />
+      <point x="1558.1894431842072" y="668.0" />
+      <point x="-72.0" y="70.5" />
+    </edge>
+    <edge source="ticket.OnlineTicket" target="seat.SeatLocation">
+      <point x="-116.625" y="-48.0" />
+      <point x="5535.960309829059" y="3508.0" />
+      <point x="5397.961111111111" y="3508.0" />
+      <point x="5397.961111111111" y="975.0" />
+      <point x="4541.103517896114" y="975.0" />
+      <point x="65.82352941176487" y="103.5" />
+    </edge>
+    <edge source="cinema.BoxOfficeTerminal" target="block.Block">
+      <point x="-90.5" y="-81.5" />
+      <point x="4092.7030100999286" y="3970.0" />
+      <point x="4191.369676766595" y="3970.0" />
+      <point x="4191.369676766595" y="3109.0" />
+      <point x="1851.293609850874" y="3109.0" />
+      <point x="143.6875" y="225.0" />
+    </edge>
+    <edge source="client.ClientGroup" target="block.BlockLocation">
+      <point x="-79.16666666666652" y="-181.0" />
+      <point x="3320.374885099929" y="3438.0" />
+      <point x="3218.8162236070752" y="3438.0" />
+      <point x="3218.8162236070752" y="2429.0" />
+      <point x="901.098669374684" y="2429.0" />
+      <point x="56.25" y="47.5" />
+    </edge>
+    <edge source="main.CinemaSimulator" target="client.ClientGroup">
+      <point x="-72.0" y="-48.0" />
+      <point x="1671.1145833333333" y="6415.0" />
+      <point x="417.5" y="6415.0" />
+      <point x="417.5" y="4070.0" />
+      <point x="3224.15693638198" y="4070.0" />
+      <point x="-175.38461538461524" y="181.0" />
+    </edge>
+    <edge source="observer.SeatAdmissionObserver" target="client.ClientGroup">
+      <point x="0.0" y="-103.5" />
+      <point x="1789.6925934332621" y="4493.0" />
+      <point x="1744.1925934332621" y="4493.0" />
+      <point x="1744.1925934332621" y="4080.0" />
+      <point x="3253.3877056127494" y="4080.0" />
+      <point x="-146.1538461538462" y="181.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="ticket.CinemaTicket.Builder">
+      <point x="157.71428571428578" y="-170.0" />
+      <point x="4819.242733582388" y="4473.0" />
+      <point x="5406.203010099928" y="4473.0" />
+      <point x="5406.203010099928" y="4110.0" />
+      <point x="5949.503723607075" y="4110.0" />
+      <point x="5949.503723607075" y="1977.0" />
+      <point x="5647.826066915721" y="1977.0" />
+      <point x="72.1875" y="147.5" />
+    </edge>
+    <edge source="client.Client" target="ticket.CinemaTicket">
+      <point x="101.25" y="-136.5" />
+      <point x="5171.953010099929" y="2489.0" />
+      <point x="5512.357316915721" y="2489.0" />
+      <point x="-26.875" y="103.5" />
+    </edge>
+    <edge source="observer.SeatAdmissionObserver" target="cinema.Cinema">
+      <point x="-102.0" y="103.5" />
+      <point x="1687.6925934332621" y="4953.0" />
+      <point x="1746.9425934332621" y="4953.0" />
+      <point x="1746.9425934332621" y="5276.0" />
+      <point x="1845.2130681818182" y="5276.0" />
+      <point x="-7.068181818181756" y="-214.0" />
+    </edge>
+    <edge source="cinema.BoxOffice" target="cinema.IClientVisitor">
+      <point x="60.90000000000009" y="-136.5" />
+      <point x="2771.2588876286522" y="4913.0" />
+      <point x="2973.8162236070752" y="4913.0" />
+      <point x="2973.8162236070752" y="4473.0" />
+      <point x="3915.8162236070752" y="4473.0" />
+      <point x="3915.8162236070752" y="3990.0" />
+      <point x="4960.998611111111" y="3990.0" />
+      <point x="-156.39999999999964" y="36.5" />
+    </edge>
+    <edge source="utility.EnumUtility" target="main.Configuration">
+      <point x="0.0" y="-25.5" />
+      <point x="3751.3162236070752" y="2409.0" />
+      <point x="2639.625554295319" y="2409.0" />
+      <point x="102.66666666666674" y="191.0" />
+    </edge>
+    <edge source="cinema.Screen" target="logging.Logger">
+      <point x="0.0" y="-25.5" />
+      <point x="1434.1925934332621" y="3508.0" />
+      <point x="2040.4241071428569" y="3508.0" />
+      <point x="2040.4241071428569" y="3229.0" />
+      <point x="3041.9099736070752" y="3229.0" />
+      <point x="-59.90625" y="136.0" />
+    </edge>
+    <edge source="seat.SeatSection" target="seat.SeatRow">
+      <point x="99.0" y="-70.5" />
+      <point x="1729.1894431842072" y="437.0" />
+      <point x="1874.2863434332617" y="437.0" />
+      <point x="-24.5" y="70.5" />
+    </edge>
+    <edge source="cinema.BoxOffice" target="client.ClientGroup">
+      <point x="20.299999999999727" y="-136.5" />
+      <point x="2730.658887628652" y="4903.0" />
+      <point x="2885.403010099929" y="4903.0" />
+      <point x="2885.403010099929" y="4120.0" />
+      <point x="3370.3107825358265" y="4120.0" />
+      <point x="-29.230769230769056" y="181.0" />
+    </edge>
+    <edge source="proxy.RealAccess" target="proxy.ICounterOfficeAccess">
+      <point x="-70.25" y="-71.0" />
+      <point x="5918.460309829059" y="4903.0" />
+      <point x="5082.398611111111" y="4903.0" />
+      <point x="68.25" y="25.5" />
+    </edge>
+    <edge source="client.OnlineClient" target="client.Client">
+      <point x="90.75" y="-59.0" />
+      <point x="6335.835309829059" y="3009.0" />
+      <point x="5149.453010099929" y="3009.0" />
+      <point x="78.75" y="136.5" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="ticket.StandardTicket">
+      <point x="118.28571428571422" y="-170.0" />
+      <point x="4779.814162153816" y="4453.0" />
+      <point x="5280.578010099928" y="4453.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="ticket.HotDealTicket" target="ticket.OnlineTicket">
+      <point x="-42.25" y="-37.0" />
+      <point x="5046.328010099929" y="4060.0" />
+      <point x="5613.710309829059" y="4060.0" />
+      <point x="-38.875" y="48.0" />
+    </edge>
+    <edge source="ticket.StandardTicket" target="ticket.OnlineTicket">
+      <point x="-43.75" y="-37.0" />
+      <point x="5236.828010099928" y="4070.0" />
+      <point x="5691.460309829059" y="4070.0" />
+      <point x="38.875" y="48.0" />
+    </edge>
+    <edge source="proxy.RealAccess" target="ticket.OnlineTicketType">
+      <point x="-14.050000000000182" y="-71.0" />
+      <point x="5974.66030982906" y="4943.0" />
+      <point x="5997.988724385643" y="4943.0" />
+      <point x="5997.988724385643" y="3498.0" />
+      <point x="5713.955041474806" y="3498.0" />
+      <point x="11.846153846154266" y="47.5" />
+    </edge>
+    <edge source="ticket.OnlineTicket" target="ticket.CinemaTicket">
+      <point x="-38.875" y="-48.0" />
+      <point x="5613.710309829059" y="3498.0" />
+      <point x="5478.200694444445" y="3498.0" />
+      <point x="5478.200694444445" y="2499.0" />
+      <point x="5566.107316915721" y="2499.0" />
+      <point x="26.875000000000227" y="103.5" />
+    </edge>
+    <edge source="cinema.BoxOffice" target="logging.Logger">
+      <point x="-20.300000000000182" y="-136.5" />
+      <point x="2690.058887628652" y="4893.0" />
+      <point x="2874.403010099929" y="4893.0" />
+      <point x="2874.403010099929" y="3538.0" />
+      <point x="3091.9724736070752" y="3538.0" />
+      <point x="3091.9724736070752" y="3259.0" />
+      <point x="3095.1599736070752" y="3259.0" />
+      <point x="-6.65625" y="136.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="cinema.BoxOfficeTerminal">
+      <point x="-138.0" y="-170.0" />
+      <point x="4523.5284478681015" y="4413.0" />
+      <point x="4228.453010099929" y="4413.0" />
+      <point x="45.25" y="81.5" />
+    </edge>
+    <edge source="block.Block" target="main.Configuration">
+      <point x="191.58333333333348" y="-225.0" />
+      <point x="1899.1894431842074" y="2489.0" />
+      <point x="2468.514443184208" y="2489.0" />
+      <point x="-68.44444444444434" y="191.0" />
+    </edge>
+    <edge source="cinema.BoxOffice" target="observer.ICinemaObserver">
+      <point x="-182.70000000000027" y="-136.5" />
+      <point x="2527.658887628652" y="4953.0" />
+      <point x="2385.192593433262" y="4953.0" />
+      <point x="2385.192593433262" y="4483.0" />
+      <point x="2417.906879147548" y="4483.0" />
+      <point x="43.71428571428578" y="58.5" />
+    </edge>
+    <edge source="block.MiddleBlock" target="block.Block">
+      <point x="160.41666666666674" y="-59.0" />
+      <point x="352.9166666666665" y="3119.0" />
+      <point x="1537.793609850874" y="3119.0" />
+      <point x="-169.8125" y="225.0" />
+    </edge>
+    <edge source="block.RightBlock" target="main.Configuration">
+      <point x="160.41666666666652" y="-59.0" />
+      <point x="1372.6092600999286" y="3189.0" />
+      <point x="1927.106109850874" y="3189.0" />
+      <point x="1927.106109850874" y="2499.0" />
+      <point x="2502.73666540643" y="2499.0" />
+      <point x="-34.22222222222217" y="191.0" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="cinema.OfficeCounter">
+      <point x="105.10714285714266" y="-103.5" />
+      <point x="3545.469856532356" y="5984.0" />
+      <point x="3648.6248850999286" y="5984.0" />
+      <point x="3648.6248850999286" y="4953.0" />
+      <point x="4615.5284478681015" y="4953.0" />
+      <point x="-46.0" y="170.0" />
+    </edge>
+    <edge source="block.LeftBlock" target="seat.SeatLocation">
+      <point x="-96.25" y="-59.0" />
+      <point x="710.9425934332621" y="3079.0" />
+      <point x="478.84866937468405" y="3079.0" />
+      <point x="478.84866937468405" y="925.0" />
+      <point x="4321.691753190231" y="925.0" />
+      <point x="-153.58823529411757" y="103.5" />
+    </edge>
+    <edge source="main.Application" target="main.CinemaSimulator">
+      <point x="72.66666666666674" y="-58.5" />
+      <point x="1752.78125" y="6566.0" />
+      <point x="1806.1145833333333" y="6566.0" />
+      <point x="63.0" y="48.0" />
+    </edge>
+    <edge source="main.Configuration" target="random.MersenneTwisterFast">
+      <point x="-77.0" y="-191.0" />
+      <point x="2459.9588876286525" y="1977.0" />
+      <point x="2446.9588876286525" y="1977.0" />
+      <point x="-83.5" y="456.0" />
+    </edge>
+    <edge source="proxy.RealAccess" target="client.RealClient">
+      <point x="-42.149999999999636" y="-71.0" />
+      <point x="5946.560309829059" y="4893.0" />
+      <point x="5543.738724385643" y="4893.0" />
+      <point x="5543.738724385643" y="3980.0" />
+      <point x="4911.398611111111" y="3980.0" />
+      <point x="4911.398611111111" y="3528.0" />
+      <point x="4983.998611111111" y="3528.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="client.ClientSeatPreference" target="block.Block">
+      <point x="-121.875" y="-59.5" />
+      <point x="3280.9412236070752" y="3139.0" />
+      <point x="1799.043609850874" y="3139.0" />
+      <point x="91.4375" y="225.0" />
+    </edge>
+    <edge source="block.RightBlock" target="block.Block">
+      <point x="32.083333333333485" y="-59.0" />
+      <point x="1244.2759267665956" y="3169.0" />
+      <point x="1668.418609850874" y="3169.0" />
+      <point x="-39.1875" y="225.0" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="main.IAccessHandler">
+      <point x="-200.69444444444434" y="-180.5" />
+      <point x="4152.604166666667" y="5924.0" />
+      <point x="997.0492424242425" y="5924.0" />
+      <point x="64.33333333333331" y="25.5" />
+    </edge>
+    <edge source="proxy.ProxyAccess" target="ticket.OnlineTicketType">
+      <point x="148.0" y="-81.5" />
+      <point x="6230.376976495727" y="5366.0" />
+      <point x="6436.988724385643" y="5366.0" />
+      <point x="6436.988724385643" y="3468.0" />
+      <point x="5749.493503013267" y="3468.0" />
+      <point x="47.384615384615245" y="47.5" />
+    </edge>
+    <edge source="client.RealClient" target="logging.Logger">
+      <point x="-83.0" y="-59.0" />
+      <point x="4900.998611111111" y="3059.0" />
+      <point x="3175.0349736070752" y="3059.0" />
+      <point x="73.21875" y="136.0" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="proxy.ICounterOfficeAccess">
+      <point x="128.46428571428578" y="-103.5" />
+      <point x="3568.826999389499" y="5994.0" />
+      <point x="3659.6248850999286" y="5994.0" />
+      <point x="3659.6248850999286" y="5366.0" />
+      <point x="4797.4034478681015" y="5366.0" />
+      <point x="4797.4034478681015" y="4943.0" />
+      <point x="4945.898611111111" y="4943.0" />
+      <point x="-68.25" y="25.5" />
+    </edge>
+    <edge source="seat.SeatLocation" target="seat.SeatSection">
+      <point x="-93.25" y="-103.5" />
+      <point x="4382.029988484349" y="628.0" />
+      <point x="1750.1894431842072" y="628.0" />
+      <point x="120.0" y="70.5" />
+    </edge>
+    <edge source="seat.SeatLocation" target="block.Block">
+      <point x="-87.76470588235316" y="103.5" />
+      <point x="4387.515282601996" y="955.0" />
+      <point x="1798.842220961985" y="955.0" />
+      <point x="1798.842220961985" y="2459.0" />
+      <point x="1794.6894431842074" y="2459.0" />
+      <point x="87.08333333333348" y="-225.0" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="client.ClientGroup">
+      <point x="-11.678571428571558" y="-103.5" />
+      <point x="3428.684142246642" y="5934.0" />
+      <point x="3399.541551766595" y="5934.0" />
+      <point x="0.0" y="181.0" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="logging.Logger">
+      <point x="-35.03571428571422" y="-103.5" />
+      <point x="3405.326999389499" y="5944.0" />
+      <point x="3102.9724736070752" y="5944.0" />
+      <point x="3102.9724736070752" y="3259.0" />
+      <point x="3108.4724736070752" y="3259.0" />
+      <point x="6.65625" y="136.0" />
+    </edge>
+    <edge source="cinema.Cinema" target="block.MiddleBlock">
+      <point x="-148.43181818181802" y="-214.0" />
+      <point x="1703.849431818182" y="5376.0" />
+      <point x="500.84866937468405" y="5376.0" />
+      <point x="500.84866937468405" y="3478.0" />
+      <point x="192.5" y="3478.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="proxy.ProxyAccess" target="proxy.ICounterOfficeAccess">
+      <point x="-98.66666666666697" y="-81.5" />
+      <point x="5983.710309829059" y="5336.0" />
+      <point x="5007.898611111111" y="5336.0" />
+      <point x="5007.898611111111" y="4953.0" />
+      <point x="5036.898611111111" y="4953.0" />
+      <point x="22.75" y="25.5" />
+    </edge>
+    <edge source="main.Application" target="logging.Logger">
+      <point x="-72.66666666666674" y="-58.5" />
+      <point x="1607.4479166666665" y="6566.0" />
+      <point x="395.5" y="6566.0" />
+      <point x="395.5" y="3199.0" />
+      <point x="3001.9724736070752" y="3199.0" />
+      <point x="-99.84375" y="136.0" />
+    </edge>
+    <edge source="cinema.Cinema" target="cinema.Screen">
+      <point x="-49.47727272727275" y="-214.0" />
+      <point x="1802.8039772727273" y="5306.0" />
+      <point x="1480.9425934332621" y="5306.0" />
+      <point x="46.75" y="25.5" />
+    </edge>
+    <edge source="cinema.BoxOfficeTerminal" target="logging.Logger">
+      <point x="30.166666666666515" y="-81.5" />
+      <point x="4213.369676766595" y="3089.0" />
+      <point x="3148.4099736070752" y="3089.0" />
+      <point x="46.59375" y="136.0" />
+    </edge>
+    <edge source="cinema.Cinema" target="block.RightBlock">
+      <point x="-91.88636363636351" y="-214.0" />
+      <point x="1760.3948863636365" y="5336.0" />
+      <point x="1212.1925934332621" y="5336.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="cinema.Cinema" target="block.LeftBlock">
+      <point x="-106.02272727272725" y="-214.0" />
+      <point x="1746.2585227272727" y="5346.0" />
+      <point x="807.1925934332621" y="5346.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="block.Block" target="seat.SeatSection">
+      <point x="-17.416666666666515" y="-225.0" />
+      <point x="1690.1894431842074" y="2439.0" />
+      <point x="1630.1894431842072" y="2439.0" />
+      <point x="0.0" y="70.5" />
+    </edge>
+    <edge source="proxy.RealAccess" target="client.Client">
+      <point x="70.25" y="-71.0" />
+      <point x="6058.960309829059" y="4943.0" />
+      <point x="6030.988724385643" y="4943.0" />
+      <point x="6030.988724385643" y="3039.0" />
+      <point x="5104.453010099929" y="3039.0" />
+      <point x="33.75" y="136.5" />
+    </edge>
+    <edge source="client.OnlineClient" target="ticket.OnlineTicketType">
+      <point x="-30.25" y="-59.0" />
+      <point x="6214.738724385643" y="3950.0" />
+      <point x="6041.988724385643" y="3950.0" />
+      <point x="6041.988724385643" y="3478.0" />
+      <point x="5737.647349167113" y="3478.0" />
+      <point x="35.53846153846189" y="47.5" />
+    </edge>
+    <edge source="client.RealClient" target="cinema.IClientVisitor">
+      <point x="99.60000000000036" y="59.0" />
+      <point x="5083.5986111111115" y="3538.0" />
+      <point x="5117.398611111111" y="3538.0" />
+      <point x="0.0" y="-36.5" />
+    </edge>
+    <edge source="proxy.RealAccess" target="cinema.OfficeCounter">
+      <point x="-126.44999999999982" y="-71.0" />
+      <point x="5862.26030982906" y="4923.0" />
+      <point x="4799.5284478681015" y="4923.0" />
+      <point x="138.0" y="170.0" />
+    </edge>
+    <edge source="cinema.IClientVisitor" target="ticket.OnlineTicketType">
+      <point x="130.33333333333303" y="-36.5" />
+      <point x="5247.731944444444" y="3518.0" />
+      <point x="5631.031964551728" y="3518.0" />
+      <point x="-71.07692307692287" y="47.5" />
+    </edge>
+    <edge source="cinema.Cinema" target="cinema.BoxOffice">
+      <point x="134.2954545454545" y="-214.0" />
+      <point x="1986.5767045454545" y="5366.0" />
+      <point x="2659.608887628652" y="5366.0" />
+      <point x="-50.75" y="136.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="utility.EnumUtility">
+      <point x="-82.63888888888869" y="-180.5" />
+      <point x="4270.659722222223" y="5874.0" />
+      <point x="3969.7030100999286" y="5874.0" />
+      <point x="3969.7030100999286" y="3498.0" />
+      <point x="3822.8162236070752" y="3498.0" />
+      <point x="71.5" y="25.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="proxy.ICounterOfficeAccess">
+      <point x="35.416666666666515" y="-180.5" />
+      <point x="4388.715277777777" y="5934.0" />
+      <point x="4939.5284478681015" y="5934.0" />
+      <point x="4939.5284478681015" y="4953.0" />
+      <point x="4991.398611111111" y="4953.0" />
+      <point x="-22.75" y="25.5" />
+    </edge>
+    <edge source="cinema.Cinema" target="observer.OfferRejectionObserver">
+      <point x="35.34090909090901" y="-214.0" />
+      <point x="1887.622159090909" y="5296.0" />
+      <point x="2124.8486693746845" y="5296.0" />
+      <point x="2124.8486693746845" y="4953.0" />
+      <point x="2027.6925934332621" y="4953.0" />
+      <point x="-130.0" y="126.0" />
+    </edge>
+    <edge source="cinema.BoxOfficeTerminal" target="seat.SeatLocation">
+      <point x="90.5" y="-81.5" />
+      <point x="4273.703010099929" y="3980.0" />
+      <point x="4300.025554295319" y="3980.0" />
+      <point x="4300.025554295319" y="985.0" />
+      <point x="4453.338812013761" y="985.0" />
+      <point x="-21.94117647058829" y="103.5" />
+    </edge>
+    <edge source="ticket.CinemaTicket" target="seat.SeatLocation">
+      <point x="-89.58333333333303" y="-103.5" />
+      <point x="5449.648983582388" y="1957.0" />
+      <point x="5438.638566915721" y="1957.0" />
+      <point x="5438.638566915721" y="965.0" />
+      <point x="4563.044694366702" y="965.0" />
+      <point x="87.76470588235316" y="103.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="ticket.OnlineTicketType">
+      <point x="153.47222222222217" y="-180.5" />
+      <point x="4506.770833333333" y="5984.0" />
+      <point x="6504.072057718977" y="5984.0" />
+      <point x="6504.072057718977" y="3448.0" />
+      <point x="5773.185810705574" y="3448.0" />
+      <point x="71.07692307692287" y="47.5" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="block.Block">
+      <point x="-59.14285714285734" y="-170.0" />
+      <point x="4602.385590725245" y="4373.0" />
+      <point x="4407.703010099928" y="4373.0" />
+      <point x="4407.703010099928" y="3079.0" />
+      <point x="1903.543609850874" y="3079.0" />
+      <point x="195.9375" y="225.0" />
+    </edge>
+    <edge source="cinema.Cinema" target="cinema.Projector">
+      <point x="-21.204545454545496" y="-214.0" />
+      <point x="1831.0767045454545" y="5286.0" />
+      <point x="1665.4425934332621" y="5286.0" />
+      <point x="39.25" y="25.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="client.OnlineClient">
+      <point x="106.25" y="-180.5" />
+      <point x="4459.548611111111" y="5964.0" />
+      <point x="6482.072057718977" y="5964.0" />
+      <point x="6482.072057718977" y="4483.0" />
+      <point x="6396.238724385643" y="4483.0" />
+      <point x="151.25" y="59.0" />
+    </edge>
+    <edge source="observer.OfferRejectionObserver" target="cinema.Cinema">
+      <point x="130.0" y="126.0" />
+      <point x="2287.692593433262" y="4953.0" />
+      <point x="2258.6251740585776" y="4953.0" />
+      <point x="2258.6251740585776" y="5316.0" />
+      <point x="1915.8948863636363" y="5316.0" />
+      <point x="63.61363636363626" y="-214.0" />
+    </edge>
+    <edge source="client.ClientGroup" target="block.Block">
+      <point x="-174.16666666666697" y="-181.0" />
+      <point x="3225.374885099928" y="3468.0" />
+      <point x="2271.991526517541" y="3468.0" />
+      <point x="2271.991526517541" y="3169.0" />
+      <point x="1746.793609850874" y="3169.0" />
+      <point x="39.1875" y="225.0" />
+    </edge>
+    <edge source="ticket.CinemaTicket" target="ticket.CinemaTicket.Builder">
+      <point x="-17.91666666666697" y="-103.5" />
+      <point x="5521.315650249054" y="1977.0" />
+      <point x="5532.326066915721" y="1977.0" />
+      <point x="-43.3125" y="147.5" />
+    </edge>
+    <edge source="main.CinemaSimulator" target="main.OnlineAccessHandler">
+      <point x="108.0" y="-48.0" />
+      <point x="1851.1145833333333" y="6425.0" />
+      <point x="4353.298611111111" y="6425.0" />
+      <point x="0.0" y="180.5" />
+    </edge>
+    <edge source="block.Block" target="seat.Seat">
+      <point x="-121.91666666666697" y="-225.0" />
+      <point x="1585.689443184207" y="2439.0" />
+      <point x="1487.6894431842072" y="2439.0" />
+      <point x="1487.6894431842072" y="206.0" />
+      <point x="1813.0720577189759" y="206.0" />
+      <point x="-85.71428571428578" y="93.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="client.ClientGroup">
+      <point x="-78.85714285714312" y="-170.0" />
+      <point x="4582.671305010958" y="4383.0" />
+      <point x="4396.703010099928" y="4383.0" />
+      <point x="4396.703010099928" y="3950.0" />
+      <point x="3574.9261671512104" y="3950.0" />
+      <point x="175.38461538461524" y="181.0" />
+    </edge>
+    <edge source="cinema.IClientVisitor" target="client.OnlineClient">
+      <point x="156.39999999999964" y="36.5" />
+      <point x="5273.79861111111" y="3960.0" />
+      <point x="6154.238724385643" y="3960.0" />
+      <point x="-90.75" y="-59.0" />
+    </edge>
+    <edge source="client.RealClient" target="client.Client">
+      <point x="0.0" y="-59.0" />
+      <point x="4983.998611111111" y="3259.0" />
+      <point x="5036.953010099929" y="3259.0" />
+      <point x="-33.75" y="136.5" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="client.RealClient">
+      <point x="58.39285714285734" y="-103.5" />
+      <point x="3498.7555708180707" y="5964.0" />
+      <point x="3626.6248850999286" y="5964.0" />
+      <point x="3626.6248850999286" y="4483.0" />
+      <point x="3926.8162236070752" y="4483.0" />
+      <point x="3926.8162236070752" y="3508.0" />
+      <point x="4884.398611111111" y="3508.0" />
+      <point x="-99.60000000000036" y="59.0" />
+    </edge>
+    <edge source="seat.SeatLocation" target="seat.Seat">
+      <point x="93.25" y="-103.5" />
+      <point x="4568.529988484349" y="658.0" />
+      <point x="4509.489319172592" y="658.0" />
+      <point x="4509.489319172592" y="216.0" />
+      <point x="1955.929200576119" y="216.0" />
+      <point x="57.14285714285734" y="93.0" />
+    </edge>
+    <edge source="client.ClientGroup" target="client.Client">
+      <point x="142.5" y="-181.0" />
+      <point x="3542.041551766595" y="3528.0" />
+      <point x="3597.8162236070752" y="3528.0" />
+      <point x="3597.8162236070752" y="3229.0" />
+      <point x="4969.453010099929" y="3229.0" />
+      <point x="-101.25" y="136.5" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="main.Configuration">
+      <point x="-58.39285714285734" y="-103.5" />
+      <point x="3381.969856532356" y="5954.0" />
+      <point x="2984.8162236070752" y="5954.0" />
+      <point x="2984.8162236070752" y="2499.0" />
+      <point x="2536.9588876286525" y="2499.0" />
+      <point x="0.0" y="191.0" />
+    </edge>
+    <edge source="observer.OfferRejectionObserver" target="observer.ICinemaObserver">
+      <point x="130.0" y="-126.0" />
+      <point x="-87.42857142857156" y="58.5" />
+    </edge>
+    <edge source="client.ClientGroup" target="logging.Logger">
+      <point x="-110.83333333333348" y="-181.0" />
+      <point x="3288.708218433262" y="3448.0" />
+      <point x="3184.8748850999286" y="3448.0" />
+      <point x="3184.8748850999286" y="3149.0" />
+      <point x="3121.7849736070752" y="3149.0" />
+      <point x="19.96875" y="136.0" />
+    </edge>
+    <edge source="block.Block" target="seat.SeatRow">
+      <point x="17.416666666666515" y="-225.0" />
+      <point x="1725.0227765175405" y="2449.0" />
+      <point x="1772.6894431842072" y="2449.0" />
+      <point x="1772.6894431842072" y="447.0" />
+      <point x="1923.2863434332617" y="447.0" />
+      <point x="24.5" y="70.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="seat.SeatLocation">
+      <point x="200.69444444444434" y="-180.5" />
+      <point x="4553.993055555556" y="6004.0" />
+      <point x="6526.072057718977" y="6004.0" />
+      <point x="6526.072057718977" y="915.0" />
+      <point x="4650.809400249055" y="915.0" />
+      <point x="175.5294117647063" y="103.5" />
+    </edge>
+    <edge source="ticket.HotDealTicket" target="ticket.OnlineTicketType">
+      <point x="42.25" y="-37.0" />
+      <point x="5130.828010099929" y="4080.0" />
+      <point x="5818.585309829059" y="4080.0" />
+      <point x="5818.585309829059" y="3518.0" />
+      <point x="5690.262733782498" y="3518.0" />
+      <point x="-11.846153846154266" y="47.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="main.Configuration">
+      <point x="-35.416666666666515" y="-180.5" />
+      <point x="4317.881944444444" y="5854.0" />
+      <point x="3991.7030100999286" y="5854.0" />
+      <point x="3991.7030100999286" y="2399.0" />
+      <point x="2673.847776517541" y="2399.0" />
+      <point x="136.8888888888889" y="191.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="client.OnlineClient">
+      <point x="197.14285714285688" y="-170.0" />
+      <point x="4858.671305010958" y="4493.0" />
+      <point x="6093.738724385643" y="4493.0" />
+      <point x="-151.25" y="59.0" />
+    </edge>
+    <edge source="proxy.ProxyAccess" target="cinema.OfficeCounter">
+      <point x="-197.33333333333394" y="-81.5" />
+      <point x="5885.043643162393" y="5356.0" />
+      <point x="4672.5284478681015" y="5356.0" />
+      <point x="4672.5284478681015" y="4953.0" />
+      <point x="4707.5284478681015" y="4953.0" />
+      <point x="46.0" y="170.0" />
+    </edge>
+    <edge source="cinema.Cinema" target="observer.ICinemaObserver">
+      <point x="77.75" y="-214.0" />
+      <point x="1930.03125" y="5326.0" />
+      <point x="2363.192593433262" y="5326.0" />
+      <point x="2363.192593433262" y="4493.0" />
+      <point x="2330.4783077189763" y="4493.0" />
+      <point x="-43.71428571428578" y="58.5" />
+    </edge>
+    <edge source="cinema.BoxOffice" target="ticket.CinemaTicket.Builder">
+      <point x="-101.5" y="-136.5" />
+      <point x="2608.858887628652" y="4873.0" />
+      <point x="2841.403010099929" y="4873.0" />
+      <point x="2841.403010099929" y="1967.0" />
+      <point x="5474.576066915721" y="1967.0" />
+      <point x="-101.0625" y="147.5" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="ticket.HotDealTicket">
+      <point x="98.57142857142844" y="-170.0" />
+      <point x="4760.09987643953" y="4443.0" />
+      <point x="5088.578010099929" y="4443.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="cinema.IClientVisitor">
+      <point x="19.71428571428578" y="-170.0" />
+      <point x="4681.242733582388" y="4333.0" />
+      <point x="4650.742733582388" y="4333.0" />
+      <point x="4650.742733582388" y="4010.0" />
+      <point x="5117.398611111111" y="4010.0" />
+      <point x="0.0" y="36.5" />
+    </edge>
+    <edge source="client.ClientSeatPreference" target="seat.SeatSection">
+      <point x="40.625" y="-59.5" />
+      <point x="3443.4412236070752" y="3259.0" />
+      <point x="3471.9530100999286" y="3259.0" />
+      <point x="3471.9530100999286" y="668.0" />
+      <point x="1654.1894431842072" y="668.0" />
+      <point x="24.0" y="70.5" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="client.Client">
+      <point x="39.42857142857156" y="-170.0" />
+      <point x="4700.957019296673" y="4323.0" />
+      <point x="4661.742733582388" y="4323.0" />
+      <point x="4661.742733582388" y="4020.0" />
+      <point x="5323.398611111111" y="4020.0" />
+      <point x="5323.398611111111" y="3259.0" />
+      <point x="5081.953010099929" y="3259.0" />
+      <point x="11.25" y="136.5" />
+    </edge>
+    <edge source="client.OnlineClient" target="cinema.IClientVisitor">
+      <point x="-151.25" y="-59.0" />
+      <point x="6093.738724385643" y="3970.0" />
+      <point x="5195.598611111111" y="3970.0" />
+      <point x="78.19999999999982" y="36.5" />
+    </edge>
+    <edge source="block.MiddleBlock" target="seat.SeatSection">
+      <point x="-160.41666666666652" y="-59.0" />
+      <point x="32.083333333333485" y="3249.0" />
+      <point x="138.41666666666697" y="3249.0" />
+      <point x="138.41666666666697" y="648.0" />
+      <point x="1510.1894431842072" y="648.0" />
+      <point x="-120.0" y="70.5" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="logging.Logger">
+      <point x="-39.42857142857156" y="-170.0" />
+      <point x="4622.09987643953" y="4363.0" />
+      <point x="4418.703010099928" y="4363.0" />
+      <point x="4418.703010099928" y="3069.0" />
+      <point x="3161.7224736070752" y="3069.0" />
+      <point x="59.90625" y="136.0" />
+    </edge>
+    <edge source="seat.SeatSection" target="seat.Seat">
+      <point x="-99.0" y="-70.5" />
+      <point x="1531.1894431842072" y="407.0" />
+      <point x="1681.7863434332617" y="407.0" />
+      <point x="1681.7863434332617" y="216.0" />
+      <point x="1841.6434862904043" y="216.0" />
+      <point x="-57.14285714285734" y="93.0" />
+    </edge>
+    <edge source="proxy.RealAccess" target="client.OnlineClient">
+      <point x="126.44999999999982" y="-71.0" />
+      <point x="6115.16030982906" y="4953.0" />
+      <point x="6188.960309829059" y="4953.0" />
+      <point x="6188.960309829059" y="4493.0" />
+      <point x="6154.238724385643" y="4493.0" />
+      <point x="-90.75" y="59.0" />
+    </edge>
+    <edge source="observer.ICinemaObserver" target="client.ClientGroup">
+      <point x="0.0" y="-58.5" />
+      <point x="2374.192593433262" y="4100.0" />
+      <point x="3311.8492440742875" y="4100.0" />
+      <point x="-87.69230769230762" y="181.0" />
+    </edge>
+    <edge source="main.CinemaSimulator" target="main.RealAccessHandler">
+      <point x="72.0" y="-48.0" />
+      <point x="1815.1145833333333" y="6415.0" />
+      <point x="3440.3627136752134" y="6415.0" />
+      <point x="0.0" y="103.5" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="cinema.IClientVisitor">
+      <point x="81.75" y="-103.5" />
+      <point x="3522.1127136752134" y="5974.0" />
+      <point x="3637.6248850999286" y="5974.0" />
+      <point x="3637.6248850999286" y="4493.0" />
+      <point x="4374.703010099928" y="4493.0" />
+      <point x="4374.703010099928" y="4000.0" />
+      <point x="5039.198611111111" y="4000.0" />
+      <point x="-78.19999999999982" y="36.5" />
+    </edge>
+    <edge source="block.Block" target="block.BlockLocation">
+      <point x="-156.75" y="-225.0" />
+      <point x="1550.856109850874" y="2449.0" />
+      <point x="878.598669374684" y="2449.0" />
+      <point x="33.75" y="47.5" />
+    </edge>
+    <edge source="cinema.IClientVisitor" target="client.RealClient">
+      <point x="-130.33333333333303" y="-36.5" />
+      <point x="4987.065277777778" y="3538.0" />
+      <point x="5033.798611111111" y="3538.0" />
+      <point x="49.80000000000018" y="59.0" />
+    </edge>
+    <edge source="block.MiddleBlock" target="seat.SeatLocation">
+      <point x="-96.25" y="-59.0" />
+      <point x="96.25" y="3259.0" />
+      <point x="149.41666666666697" y="3259.0" />
+      <point x="149.41666666666697" y="915.0" />
+      <point x="4299.750576719643" y="915.0" />
+      <point x="-175.52941176470586" y="103.5" />
+    </edge>
+    <edge source="client.ClientGroup" target="main.Configuration">
+      <point x="-47.5" y="-181.0" />
+      <point x="3352.041551766595" y="3428.0" />
+      <point x="3229.8162236070752" y="3428.0" />
+      <point x="3229.8162236070752" y="2419.0" />
+      <point x="2605.403332073097" y="2419.0" />
+      <point x="68.44444444444457" y="191.0" />
+    </edge>
+    <edge source="proxy.RealAccess" target="logging.Logger">
+      <point x="42.149999999999636" y="-71.0" />
+      <point x="6030.860309829059" y="4953.0" />
+      <point x="6019.988724385643" y="4953.0" />
+      <point x="6019.988724385643" y="3049.0" />
+      <point x="3188.3474736070752" y="3049.0" />
+      <point x="86.53125" y="136.0" />
+    </edge>
+    <edge source="cinema.Cinema" target="block.Block">
+      <point x="-134.2954545454545" y="-214.0" />
+      <point x="1717.9857954545455" y="5366.0" />
+      <point x="593.1925934332621" y="5366.0" />
+      <point x="593.1925934332621" y="3129.0" />
+      <point x="1563.918609850874" y="3129.0" />
+      <point x="-143.6875" y="225.0" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="ticket.OnlineTicket">
+      <point x="129.8611111111113" y="-180.5" />
+      <point x="4483.159722222223" y="5974.0" />
+      <point x="6493.072057718977" y="5974.0" />
+      <point x="6493.072057718977" y="3940.0" />
+      <point x="5769.210309829059" y="3940.0" />
+      <point x="116.625" y="48.0" />
+    </edge>
+    <edge source="seat.SeatRow" target="seat.Seat">
+      <point x="0.0" y="-70.5" />
+      <point x="0.0" y="93.0" />
+    </edge>
+    <edge source="cinema.BoxOffice" target="block.Block">
+      <point x="-142.0999999999999" y="-136.5" />
+      <point x="2568.2588876286522" y="4953.0" />
+      <point x="2571.1425934332624" y="4953.0" />
+      <point x="2571.1425934332624" y="3478.0" />
+      <point x="1960.9241071428569" y="3478.0" />
+      <point x="1960.9241071428569" y="3179.0" />
+      <point x="1720.668609850874" y="3179.0" />
+      <point x="13.0625" y="225.0" />
+    </edge>
+    <edge source="ticket.SurpriseTicket" target="ticket.OnlineTicket">
+      <point x="42.5" y="-37.0" />
+      <point x="4912.703010099929" y="4050.0" />
+      <point x="5535.960309829059" y="4050.0" />
+      <point x="-116.625" y="48.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="client.RealClient">
+      <point x="0.0" y="-170.0" />
+      <point x="4661.5284478681015" y="4343.0" />
+      <point x="4497.203010099928" y="4343.0" />
+      <point x="4497.203010099928" y="3518.0" />
+      <point x="4934.198611111111" y="3518.0" />
+      <point x="-49.80000000000018" y="59.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="ticket.OnlineTicketType">
+      <point x="59.14285714285734" y="-170.0" />
+      <point x="4720.671305010959" y="4423.0" />
+      <point x="4774.703010099929" y="4423.0" />
+      <point x="4774.703010099929" y="4030.0" />
+      <point x="5423.27280982906" y="4030.0" />
+      <point x="5423.27280982906" y="3528.0" />
+      <point x="5642.878118397883" y="3528.0" />
+      <point x="-59.23076923076951" y="47.5" />
+    </edge>
+    <edge source="main.OnlineAccessHandler" target="client.ClientGroup">
+      <point x="-106.25" y="-180.5" />
+      <point x="4247.048611111111" y="5884.0" />
+      <point x="3958.7030100999286" y="5884.0" />
+      <point x="3958.7030100999286" y="3980.0" />
+      <point x="3487.2338594589028" y="3980.0" />
+      <point x="87.69230769230762" y="181.0" />
+    </edge>
+    <edge source="cinema.OfficeCounter" target="observer.ICinemaObserver">
+      <point x="-177.42857142857156" y="-170.0" />
+      <point x="4484.09987643953" y="4433.0" />
+      <point x="2505.335450576119" y="4433.0" />
+      <point x="131.14285714285688" y="58.5" />
+    </edge>
+    <edge source="block.LeftBlock" target="block.Block">
+      <point x="160.41666666666674" y="-59.0" />
+      <point x="967.6092600999286" y="3159.0" />
+      <point x="1642.293609850874" y="3159.0" />
+      <point x="-65.3125" y="225.0" />
+    </edge>
+    <edge source="proxy.ProxyAccess" target="proxy.RealAccess">
+      <point x="-49.33333333333303" y="-81.5" />
+      <point x="6033.043643162393" y="5376.0" />
+      <point x="5988.710309829059" y="5376.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="block.LeftBlock" target="seat.SeatSection">
+      <point x="-160.41666666666652" y="-59.0" />
+      <point x="646.7759267665956" y="3089.0" />
+      <point x="467.84866937468405" y="3089.0" />
+      <point x="467.84866937468405" y="658.0" />
+      <point x="1534.1894431842072" y="658.0" />
+      <point x="-96.0" y="70.5" />
+    </edge>
+    <edge source="client.ClientGroup" target="utility.EnumUtility">
+      <point x="174.16666666666652" y="-181.0" />
+      <point x="3573.708218433262" y="3538.0" />
+      <point x="3679.8162236070752" y="3538.0" />
+      <point x="-71.5" y="25.5" />
+    </edge>
+    <edge source="cinema.Cinema" target="logging.Logger">
+      <point x="-77.75" y="-214.0" />
+      <point x="1774.53125" y="5326.0" />
+      <point x="1330.1925934332621" y="5326.0" />
+      <point x="1330.1925934332621" y="3498.0" />
+      <point x="1982.9241071428569" y="3498.0" />
+      <point x="1982.9241071428569" y="3219.0" />
+      <point x="3028.5974736070752" y="3219.0" />
+      <point x="-73.21875" y="136.0" />
+    </edge>
+    <edge source="client.ClientGroup" target="seat.SeatSection">
+      <point x="79.16666666666652" y="-181.0" />
+      <point x="3478.708218433262" y="3508.0" />
+      <point x="3575.8162236070752" y="3508.0" />
+      <point x="3575.8162236070752" y="648.0" />
+      <point x="1702.1894431842072" y="648.0" />
+      <point x="72.0" y="70.5" />
+    </edge>
+    <edge source="cinema.Cinema" target="client.ClientGroup">
+      <point x="106.02272727272725" y="-214.0" />
+      <point x="1958.3039772727273" y="5346.0" />
+      <point x="2396.192593433262" y="5346.0" />
+      <point x="2396.192593433262" y="4493.0" />
+      <point x="2863.403010099929" y="4493.0" />
+      <point x="2863.403010099929" y="4110.0" />
+      <point x="3341.080013305057" y="4110.0" />
+      <point x="-58.46153846153857" y="181.0" />
+    </edge>
+    <edge source="block.RightBlock" target="block.BlockLocation">
+      <point x="-96.25" y="-59.0" />
+      <point x="1115.9425934332621" y="3049.0" />
+      <point x="833.598669374684" y="3049.0" />
+      <point x="-11.25" y="47.5" />
+    </edge>
+    <edge source="observer.SeatAdmissionObserver" target="observer.ICinemaObserver">
+      <point x="102.0" y="-103.5" />
+      <point x="1891.6925934332621" y="4493.0" />
+      <point x="2243.0497362904052" y="4493.0" />
+      <point x="-131.1428571428571" y="58.5" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="main.IAccessHandler">
+      <point x="-151.82142857142844" y="-103.5" />
+      <point x="3288.541285103785" y="5994.0" />
+      <point x="932.715909090909" y="5994.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="ticket.SurpriseTicket" target="ticket.OnlineTicketType">
+      <point x="-42.5" y="-37.0" />
+      <point x="4827.703010099929" y="4040.0" />
+      <point x="5455.27280982906" y="4040.0" />
+      <point x="5455.27280982906" y="3538.0" />
+      <point x="5654.724272244037" y="3538.0" />
+      <point x="-47.384615384615245" y="47.5" />
+    </edge>
+    <edge source="observer.OfferRejectionObserver" target="logging.Logger">
+      <point x="-130.0" y="-126.0" />
+      <point x="2027.6925934332621" y="4483.0" />
+      <point x="2063.6251740585776" y="4483.0" />
+      <point x="2063.6251740585776" y="3538.0" />
+      <point x="2380.692593433262" y="3538.0" />
+      <point x="2380.692593433262" y="3259.0" />
+      <point x="3081.8474736070752" y="3259.0" />
+      <point x="-19.96875" y="136.0" />
+    </edge>
+    <edge source="observer.OfferRejectionObserver" target="client.ClientGroup">
+      <point x="0.0" y="-126.0" />
+      <point x="2157.692593433262" y="4483.0" />
+      <point x="2098.192593433262" y="4483.0" />
+      <point x="2098.192593433262" y="4090.0" />
+      <point x="3282.618474843518" y="4090.0" />
+      <point x="-116.92307692307713" y="181.0" />
+    </edge>
+    <edge source="main.RealAccessHandler" target="proxy.RealAccess">
+      <point x="151.82142857142844" y="-103.5" />
+      <point x="3592.184142246642" y="6004.0" />
+      <point x="3670.6248850999286" y="6004.0" />
+      <point x="3670.6248850999286" y="5376.0" />
+      <point x="5895.043643162393" y="5376.0" />
+      <point x="-93.66666666666697" y="71.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.47375980551523506" x="1031.0" y="1146.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
