@@ -1,6 +1,8 @@
 package client;
 
 import cinema.IClientVisitor;
+import logging.Logger;
+import ticket.OnlineTicketType;
 
 public class OnlineClient extends Client {
 
@@ -13,8 +15,13 @@ public class OnlineClient extends Client {
         super.setOnline();
     }
 
-    public double takeTicket(IClientVisitor boxOffice) {
-        return boxOffice.createTicketFor(this);
+    public void takeTicket(IClientVisitor boxOffice, OnlineTicketType type) {
+        Logger.instance.log("    > Invoking visitor for this OnlineClient with ticket type " + type.name());
+        boxOffice.createTicketFor(this, type);
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

@@ -61,7 +61,7 @@ public class Block {
         List<SeatLocation> consecutiveFreeSeats = new ArrayList<>(numberOfConsecutiveSeats);
         for (SeatRow sectionRow : section.getSectionRows()) {
             for (Seat rowSeat : sectionRow.getSeats()) {
-                if (!rowSeat.isTaken()) {
+                if (!rowSeat.isReserved()) {
                     consecutiveFreeSeats.add(new SeatLocation(this, section, sectionRow, rowSeat));
                 } else {
                     consecutiveFreeSeats.clear();
@@ -90,7 +90,7 @@ public class Block {
      * @return the seat section
      */
     public List<SeatLocation> chooseNextFreeSection(int groupSize) {
-        // First COR (Block)
+        // First Chain of Responsibility (Block)
         if (this.isFull(groupSize)) {
             if (successor != null) {
                 return this.getSuccessor().chooseNextFreeSection(groupSize);
@@ -99,13 +99,43 @@ public class Block {
             return null;
         }
 
-        // Nested COR (Section)
+        // Nested Chain of Responsibility (Section)
 
         // Start searching for next free seats at the back of the cinema
         // because people rather want to sit in the behind than directly
         // in front of the screen
         SeatSection upperSection = sections.get(sections.size() - 1);
         return locateFreeSeatsIn(upperSection, groupSize);
+    }
+
+    public List<SeatLocation> chooseRandomSeats(int groupSize) {
+        int blockId = this.getBlockId();
+        int randomBlockIndex = Configuration.instance.mersenneTwister.nextInt(blockId, 2);
+
+        Block selectedBlock = chooseBlock(randomBlockIndex, this);
+        return selectedBlock.chooseNextFreeSection(groupSize);
+    }
+
+    private int getBlockId() {
+        switch (this.getLocation()) {
+            case left:
+                return 0;
+            case middle:
+                return 1;
+            case right:
+                return 2;
+        }
+
+        return -1;
+    }
+
+    // Chain of Responsibility (COR)
+    private Block chooseBlock(int depth, Block block) {
+        if (depth == 0) {
+            return block;
+        }
+
+        return chooseBlock(depth - 1, block.getSuccessor());
     }
 
     private List<SeatLocation> locateFreeSeatsIn(SeatSection checkSection, int groupSize) {
@@ -154,10 +184,10 @@ public class Block {
     }
 
     public boolean is95PercentFull() {
-        int numberOfReservedSeats = 1;
+        int numberOfReservedSeats = 0;
         for (SeatSection section : sections) {
             for (Seat blockSeat : section.getOrderedSeats()) {
-                if (blockSeat.isTaken()) {
+                if (blockSeat.isReserved()) {
                     numberOfReservedSeats++;
                 }
             }
@@ -167,10 +197,8 @@ public class Block {
         for (SeatSection section : sections) {
             numberOfBlockRows += section.getSectionRows().size();
         }
-        System.out.println("number of rows: " + numberOfBlockRows);
-        System.out.println("number registered: " + numberOfReservedSeats);
 
-        return (numberOfReservedSeats / (numberOfBlockRows * numberOfReservedSeats)) >= Configuration.instance.percentageOfFullCinema;
+        return (numberOfReservedSeats / (numberOfBlockRows * numberOfSeatsPerRow)) >= Configuration.instance.percentageOfFullCinema;
     }
 
     public void setSuccessor(Block successor) {

@@ -2,9 +2,10 @@ package cinema;
 
 import client.OnlineClient;
 import client.RealClient;
+import ticket.OnlineTicketType;
 
 public interface IClientVisitor {
-    double createTicketFor(RealClient client);
+    void createTicketFor(RealClient client);
 
-    double createTicketFor(OnlineClient client);
+    void createTicketFor(OnlineClient client, OnlineTicketType type);
 }

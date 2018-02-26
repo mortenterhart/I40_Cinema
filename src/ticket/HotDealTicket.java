@@ -1,16 +1,14 @@
 package ticket;
 
-import seat.SeatLocation;
-
 public class HotDealTicket extends OnlineTicket {
 
-    public HotDealTicket(OnlineTicket successor) {
-        super(successor);
+    public HotDealTicket() {
         super.setPrice(8.0);
+        super.setType(OnlineTicketType.hotDeal);
     }
 
     @Override
-    public SeatLocation selectSeat() {
-        return super.selectSeat();
+    public String toString() {
+        return super.toString();
     }
 }

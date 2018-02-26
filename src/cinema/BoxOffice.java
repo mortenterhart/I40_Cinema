@@ -2,6 +2,8 @@ package cinema;
 
 import block.Block;
 import client.ClientGroup;
+import logging.Logger;
+import observer.ICinemaObserver;
 import ticket.CinemaTicket;
 
 public class BoxOffice {
@@ -22,8 +24,10 @@ public class BoxOffice {
     public void guideToCounter(ClientGroup group) {
         if (isOpen()) {
             if (normalCounter.accepts(group)) {
+                Logger.instance.log("Guiding group " + group + " to normal counter");
                 normalCounter.offerSeats(group);
             } else if (onlineCounter.accepts(group)) {
+                Logger.instance.log("Guiding group " + group + " to online counter");
                 onlineCounter.offerSeats(group);
             } else {
                 triggerIllegalStateException(group);
@@ -52,6 +56,11 @@ public class BoxOffice {
 
     private void triggerIllegalStateException(ClientGroup group) {
         throw new IllegalStateException("client group not recognized: " + group);
+    }
+
+    public void registerSeatAdmissionObserver(ICinemaObserver seatAdmissionObserver) {
+        normalCounter.equip(seatAdmissionObserver);
+        onlineCounter.equip(seatAdmissionObserver);
     }
 
     public OfficeCounter getNormalCounter() {

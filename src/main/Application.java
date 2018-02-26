@@ -9,8 +9,10 @@ public class Application {
     }
 
     private void execute() {
+        Logger.instance.log("### Start Application Cinema\n");
         CinemaSimulator simulator = new CinemaSimulator();
         simulator.startSimulation();
+        Logger.instance.log("\n### End Application Cinema");
     }
 
     private void prepareShutdown() {

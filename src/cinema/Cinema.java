@@ -5,6 +5,7 @@ import block.LeftBlock;
 import block.MiddleBlock;
 import block.RightBlock;
 import client.ClientGroup;
+import logging.Logger;
 import observer.ICinemaObserver;
 import observer.OfferRejectionObserver;
 import observer.SeatAdmissionObserver;
@@ -19,17 +20,24 @@ public class Cinema {
     private final ICinemaObserver seatAdmissionObserver;
 
     public Cinema() {
+        Logger.instance.log(" -- Creating an instance for Cinema");
+        Logger.instance.log("     > Building the chain of responsibility between the cinema blocks");
         Block rightBlock = new RightBlock();
         Block middleBlock = new MiddleBlock(rightBlock);
         leftBlock = new LeftBlock(middleBlock);
 
+        Logger.instance.log("     > Building the ticket office with two counters (normal, online)");
         ticketOffice = new BoxOffice(leftBlock, 42);
 
+        Logger.instance.log("     > Setting up screen and projector in cinema room");
         screen = new Screen();
         projector = new Projector();
 
+        Logger.instance.log("     > Initializing the cinema observers notifying about actions connected to the terminating condition");
         offerRejectingObserver = new OfferRejectionObserver(this);
         seatAdmissionObserver = new SeatAdmissionObserver(this);
+
+        ticketOffice.registerSeatAdmissionObserver(seatAdmissionObserver);
     }
 
     public void reportClientRejection(ClientGroup rejectingGroup) {
@@ -41,7 +49,13 @@ public class Cinema {
     }
 
     public void reportCinema95PercentFull() {
-        seatAdmissionObserver.notifyCinemaIs95PercentFull();
+        if (offerRejectingObserver.wasTriggered()) {
+            Logger.instance.log("      >> yes, closing box office");
+            seatAdmissionObserver.notifyCinemaIs95PercentFull();
+            return;
+        }
+
+        Logger.instance.log("      >> no");
     }
 
     public void closeTicketOffice() {
@@ -52,7 +66,7 @@ public class Cinema {
         return isFull(leftBlock, 1);
     }
 
-    // COR
+    // Chain of Responsibility
     private boolean isFull(Block responsibleBlock, int groupSize) {
         if (responsibleBlock == null) {
             return true;
@@ -91,7 +105,15 @@ public class Cinema {
     }
 
     public void darkenRoom() {
-        System.out.println("Turning lights off");
+        Logger.instance.log("Cinema: Slowly dimming lights in cinema");
+    }
+
+    public ICinemaObserver getOfferRejectingObserver() {
+        return offerRejectingObserver;
+    }
+
+    public ICinemaObserver getSeatAdmissionObserver() {
+        return seatAdmissionObserver;
     }
 
     public BoxOffice getTicketOffice() {

@@ -6,6 +6,7 @@ import logging.Logger;
 
 public class OfferRejectionObserver implements ICinemaObserver {
     private int numberOfRejectedOffers = 0;
+    private boolean triggered = false;
     private Cinema cinema;
 
     public OfferRejectionObserver(Cinema cinema) {
@@ -22,15 +23,24 @@ public class OfferRejectionObserver implements ICinemaObserver {
 
     public void notifyOfferRejection(ClientGroup rejectingGroup) {
         numberOfRejectedOffers++;
-        Logger.instance.log("ClientGroup " + rejectingGroup + " rejected the offer");
+        Logger.instance.log("OfferRejectionObserver: ClientGroup " + rejectingGroup.getMembers() + " rejected the offer");
 
-        if (numberOfRejectedOffers > 3) {
-            cinema.closeTicketOffice();
+        if (numberOfRejectedOffers == 3) {
+            triggered = true;
         }
+    }
+
+    public boolean wasTriggered() {
+        return triggered;
     }
 
     public int getNumberOfRejectedOffers() {
         return numberOfRejectedOffers;
+    }
+
+    public void resetNumberOfRejectedOffers() {
+        numberOfRejectedOffers = 0;
+        triggered = false;
     }
 
     private void triggerUnsupportedOperationException(String operation) {

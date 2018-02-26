@@ -1,6 +1,7 @@
 package client;
 
 import cinema.IClientVisitor;
+import logging.Logger;
 
 public class RealClient extends Client {
 
@@ -12,7 +13,13 @@ public class RealClient extends Client {
         super(name, age);
     }
 
-    public double takeTicket(IClientVisitor boxOffice) {
-        return boxOffice.createTicketFor(this);
+    public void takeTicket(IClientVisitor boxOffice) {
+        Logger.instance.log("   > Invoking visitor for RealClient");
+        boxOffice.createTicketFor(this);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

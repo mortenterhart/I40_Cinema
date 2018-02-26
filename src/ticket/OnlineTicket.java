@@ -3,18 +3,19 @@ package ticket;
 import seat.SeatLocation;
 
 public class OnlineTicket extends CinemaTicket {
-    // COR
-    private OnlineTicket successor;
+    private OnlineTicketType type;
 
-    public OnlineTicket(OnlineTicket successor) {
-        this.successor = successor;
+    public void setType(OnlineTicketType type) {
+        this.type = type;
     }
 
-    public SeatLocation selectSeat() {
-        return null;
+    public void receiveSeatLocation(SeatLocation chosenSeat) {
+        super.setSeatLocation(chosenSeat);
+        super.getSeatLocation().reserve();
     }
 
-    public OnlineTicket getSuccessor() {
-        return successor;
+    @Override
+    public String toString() {
+        return super.toString();
     }
 }

@@ -12,6 +12,7 @@ public enum Configuration {
     public final long iterationInterval = 200;
     public final int movieAgeConfinement = 16;
     public final double percentageOfFullCinema = 0.95;
+    public final int numberOfOnlineBookings = 200;
 
     public final MersenneTwisterFast mersenneTwister = new MersenneTwisterFast();
 

@@ -10,7 +10,6 @@ public class CinemaTicket {
     private int cinemaId = 42;
 
     protected CinemaTicket() {
-
     }
 
     protected void setTicketId(int ticketId) {
@@ -71,6 +70,10 @@ public class CinemaTicket {
 
         public static void resetIdCounter() {
             ticketIdCounter = 0;
+        }
+
+        public static int getTicketIdCounter() {
+            return ticketIdCounter;
         }
 
         public Builder setSeatLocation(SeatLocation seatLocation) {

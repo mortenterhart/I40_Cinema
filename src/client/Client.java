@@ -1,7 +1,7 @@
 package client;
 
-import ticket.CinemaTicket;
 import seat.SeatLocation;
+import ticket.CinemaTicket;
 
 public class Client {
     private CinemaTicket ticket;
@@ -58,5 +58,10 @@ public class Client {
 
     public void setOnline() {
         online = true;
+    }
+
+    @Override
+    public String toString() {
+        return name + "(age " + age + ")";
     }
 }

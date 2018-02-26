@@ -1,8 +1,11 @@
 package cinema;
 
+import logging.Logger;
+
 public class Projector {
 
     public void playFilm() {
-        System.out.println("Showing film ...");
+        Logger.instance.log("Projector: Preheating the projector");
+        Logger.instance.log("Projector: Starting movie ... Enjoy!");
     }
 }

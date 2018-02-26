@@ -19,4 +19,9 @@ public class ClientSeatPreference {
     public SeatSection getSection() {
         return section;
     }
+
+    @Override
+    public String toString() {
+        return "Block " + block.getLocation().name() + ", section " + section.getIdentifier();
+    }
 }

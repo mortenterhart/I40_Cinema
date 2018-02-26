@@ -1,8 +1,10 @@
 package cinema;
 
+import logging.Logger;
+
 public class Screen {
 
     public void displayMovie() {
-        System.out.println("Displaying movie");
+        Logger.instance.log("Screen: Rolling out screen and preparing for projector");
     }
 }

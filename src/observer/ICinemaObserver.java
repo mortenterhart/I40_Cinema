@@ -8,4 +8,6 @@ public interface ICinemaObserver {
     void notifyCinemaIs95PercentFull();
 
     void notifyOfferRejection(ClientGroup rejectingGroup);
+
+    boolean wasTriggered();
 }

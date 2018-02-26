@@ -1,16 +1,14 @@
 package ticket;
 
-import seat.SeatLocation;
-
 public class StandardTicket extends OnlineTicket {
 
-    public StandardTicket(OnlineTicket successor) {
-        super(successor);
+    public StandardTicket() {
         super.setPrice(9.0);
+        super.setType(OnlineTicketType.standard);
     }
 
     @Override
-    public SeatLocation selectSeat() {
-        return super.selectSeat();
+    public String toString() {
+        return super.toString();
     }
 }

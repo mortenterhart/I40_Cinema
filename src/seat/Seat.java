@@ -27,7 +27,7 @@ public class Seat {
         return seatId;
     }
 
-    public boolean isTaken() {
+    public boolean isReserved() {
         return isTaken;
     }
 }

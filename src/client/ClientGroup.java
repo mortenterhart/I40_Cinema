@@ -1,9 +1,11 @@
 package client;
 
 import block.Block;
+import block.BlockLocation;
 import logging.Logger;
 import main.Configuration;
 import seat.SeatSection;
+import utility.EnumUtility;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,14 +26,14 @@ public class ClientGroup {
     }
 
     private ClientSeatPreference generateRandomPreference() {
-        Block randomBlock = chooseBlock(Configuration.instance.mersenneTwister.nextInt(3), leftBlock);
+        Block randomBlock = getBlock(EnumUtility.randomEnumConstant(BlockLocation.class));
         int randomSectionIndex = Configuration.instance.mersenneTwister.nextInt(randomBlock.getSections().size());
         SeatSection randomSection = randomBlock.getSections().get(randomSectionIndex);
 
         return new ClientSeatPreference(randomBlock, randomSection);
     }
 
-    // COR
+    // Chain of Responsibility
     private Block chooseBlock(int depth, Block block) {
         if (depth == 0) {
             return block;
@@ -45,7 +47,20 @@ public class ClientGroup {
     }
 
     public void leaveCinema() {
-        Logger.instance.log("Leaving cinema ...");
+        Logger.instance.log("    > ClientGroup: Leaving cinema ...");
+    }
+
+    public Block getBlock(BlockLocation location) {
+        switch (location) {
+            case left:
+                return leftBlock;
+            case middle:
+                return leftBlock.getSuccessor();
+            case right:
+                return leftBlock.getSuccessor().getSuccessor();
+        }
+
+        return null;
     }
 
     public void addMember(Client member) {
@@ -78,5 +93,10 @@ public class ClientGroup {
 
     public ClientSeatPreference getPreference() {
         return preference;
+    }
+
+    @Override
+    public String toString() {
+        return members.toString();
     }
 }
