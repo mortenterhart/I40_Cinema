@@ -2,6 +2,11 @@
 
 **Used Design Patterns**: Proxy, Chain of Responsibility, Observer
 
+## Klassendiagramm
+![Cinema class diagram](uml/intellij/Cinema_class_diagram.png)
+Insgesamt **43** Klassen mit 2219 Zeilen Quelltext.
+
+## Aufgabenstellung
 Ein Kino ist unterteilt in drei Blöcke
 1. **links**: 50 Reihen mit je 25 Sitzplätzen
 2. **mitte**: 50 Reihen mit je 40 Sitzplätzen und

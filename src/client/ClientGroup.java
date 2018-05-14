@@ -50,7 +50,7 @@ public class ClientGroup {
         Logger.instance.log("    > ClientGroup: Leaving cinema ...");
     }
 
-    public Block getBlock(BlockLocation location) {
+    private Block getBlock(BlockLocation location) {
         switch (location) {
             case left:
                 return leftBlock;

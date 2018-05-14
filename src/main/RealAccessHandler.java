@@ -31,7 +31,7 @@ public class RealAccessHandler implements IAccessHandler {
             Logger.instance.log("    > Retrieving suitable counter for group of size " + visitorGroup.getSize());
             ticketOffice.guideToCounter(visitorGroup);
 
-            Logger.instance.log("    > Checking if group accepts offer (" + Configuration.instance.percentageOfFullCinema + " probability)");
+            Logger.instance.log("    > Checking if group accepts offer (" + Configuration.instance.offerAcceptingProbability + " probability)");
             if (ticketOffice.isOpen()) {
                 if (visitorGroup.acceptsOffer()) {
                     Logger.instance.log(">> Accepted");
